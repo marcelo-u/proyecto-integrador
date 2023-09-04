@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funko grupo 1</title>
+    
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <title>Home | Funkoshop</title>
   </head>
   <body>
     <!-- INICIO HEADER-->
     <header>
       <nav>
-        <picture>
-          <a href="index.html">
-            <img src="./images/branding/logo_light_horizontal.svg" alt="LOGO" />
+        <!-- logo dentro de nav pq será un link -->
+        <picture> <!-- le da mas semántica a la estructura -->
+          <a href="./index.html">
+            <img src="./images/branding/logo_light_horizontal.svg" alt="Isologo de Funkoshop"/>
           </a>
         </picture>
         <ul>
@@ -20,7 +24,7 @@
           <li><a href="./pages/login.html">LOGIN</a></li>
           <li>
             <a href="./pages/cart.html">
-              <img src="./images/icons/cart-icon.svg" alt="logocarrito" />
+              <img src="./images/icons/cart-icon.svg" alt="Icono de carrito" />
             </a>
           </li>
         </ul>
@@ -28,109 +32,98 @@
     </header>
     <!-- FIN  HEADER-->
     
-    <main>
-      <section id="BANNER">
+    <main class="container">
+      <section> <!-- BANNER -->
+      <!-- la imagen de fondo se puede agregar como background con CSS -->
         <article>
           <h3>Nuevos Ingresos</h3>
           <p>Descubrí el próximo Funko Pop de tu colección</p>
-          <a href="./pages/shop.html">Shop </a>
+          <a href="./pages/shop.html">SHOP</a>
         </article>
       </section>
-      <section>
-        <article>
-          Star Wars & The Mandalorian
-          <h3></h3>
-          <p>
-            Disdruta de una saga que sigue agregando personajes a su colección.
-          </p>
-          <a href="./pages/shop.html">Ver Colección</a>
+
+      <!-- COLECCIONES -->
+      <section><!-- box modeling (modelo de caja) -->
+        <article> 
+          <h3>Star Wars & The Mandalorian</h3>
+          <p>Disfrutá de una saga que sigue agregando personajes a su colección.</p>
+          <a href="./pages/shop.html">VER COLECCIÓN</a>
         </article>
         <picture>
-          <img
-            src="./images/star-wars/baby-yoda-1.webp"
-            alt="yoda coleccionable de grogu"
-          />
-        </picture>
+              <img src="./images/star-wars/baby-yoda-1.webp" alt="baby yoda">
+      </picture>
       </section>
+
       <section>
         <article>
           <h3>Pokemon Indigo</h3>
-          <p>
-            Atrapa todos los que puedas y disfruta de una colección llena de
-            amigos.
-          </p>
-          <a href="./pages/shop.html">Ver Colección</a>
+          <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
+          <a href="./pages/shop.html">VER COLECCIÓN</a>
         </article>
         <picture>
-          <img src="./images/pokemon/vulpix-1.webp" alt="vulpix funko" />
+          <img src="./images/pokemon/vulpix-1.webp" alt="pokemon vulpix funko" />
         </picture>
       </section>
+
       <section>
         <article>
           <h3>Harry Potter</h3>
-          <p>Revive una saga llena de magia y encanto.</p>
-          <a href="./pages/shop.html">Ver Colección</a>
+          <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
+          <a href="./pages/shop.html">VER COLECCIÓN</a>
         </article>
         <picture>
           <img
             src="./images/harry-potter/snape-patronus-1.webp"
-            alt="snape patronus"
+            alt="Patronus de Snape de la saga Harry Potter"
           />
         </picture>
       </section>
+
+       <!-- ULTIMOS LANZAMIENTOS -->
       <section>
-        <h2>Ultimos Lanzamientos</h2>
-        <ul>
+        <h2>ULTIMOS LANZAMIENTOS</h2>
+        <ul><!-- se usa ul/li en vez de div porque tiene sentido semantico: c/elemento forma parte del carrucel-->
           <li>
             <article>
-              <a href="./pages/item.html">
+              <a href="./item.html">
                 <picture>
-                  <img
-                    src="./images/star-wars/trooper-1.webp"
-                    alt="figura coleccionable Funko  Stormtrooper"
-                  />
+                  <img src="./images/star-wars/trooper-1.webp" alt="Figura coleccionable Funko  Stormtrooper"/>
                 </picture>
                 <div>
                   <p>Star Wars</p>
                   <h4>Strormtrooper Lightsaber</h4>
                   <p>$1799,99</p>
-                  <p>3 cuotas sin interes</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
                 </div>
               </a>
             </article>
           </li>
           <li>
             <article>
-              <a href="./pages/item.html">
+              <a href="./item.html">
                 <picture>
-                  <img
-                    src="./images/pokemon/pidgeotto-1.webp"
-                    alt="figura coleccionable Funko Pidgeoto"
-                  />
+                  <img src="./images/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko Pidgeoto"/>
                 </picture>
                 <div>
                   <p>Pokemon</p>
                   <h4>SPidgetto</h4>
                   <p>$1799,99</p>
-                  <p>3 cuotas sin interes</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
                 </div>
               </a>
             </article>
           </li>
           <li>
             <article>
-              <a href="./pages/item.html">
+              <a href="./item.html">
                 <picture>
-                  <img
-                    src="./images/harry-potter/luna-1.webp"
-                    alt="figura coleccionable Funko Luna"
-                  />
+                  <img src="./images/harry-potter/luna-1.webp" alt="Figura coleccionable Funko Luna"/>
                 </picture>
                 <div>
                   <p>Harry Potter</p>
                   <h4>Luna Lovegood Lion Mask</h4>
                   <p>$1799,99</p>
-                  <p>3 cuotas sin interes</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
                 </div>
               </a>
             </article>
@@ -142,16 +135,25 @@
     <!-- INICIO FOOTER -->
     <footer>
       <section>
-        <nav>
-          <li>
-            <a href="./pages/shop.html">SHOP</a>
-          </li>
-          <li><a href="./pages/login.html">INGRESAR</a></li>
-          <li><a href="./pages/contact.html">CONTACTO</a></li>
-          <picture>
-            <img src="./images/branding/isotype.svg" alt="Logo basico" />
-          </picture>
-        </nav>
+          <nav>
+              <ul>
+                  <li>
+                      <a href="./pages/shop.html">SHOP</a>
+                  </li>
+                  <li>
+                      <a href="./pages/login.html">INGRESAR</a>
+                  </li>
+                  <li>
+                      <a href="./pages/contacto.html">CONTACTO</a>
+                  </li>
+              </ul>
+              <!-- logo dentro de nav pq será un link -->
+              <picture> <!-- le da mas semántica a la estructura -->
+                  <a href="./index.html">
+                      <img src="./images/branding/isotype.svg" alt="Isotipo de Funkoshop">
+                  </a>
+              </picture>
+          </nav>
       </section>
       <p>All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>

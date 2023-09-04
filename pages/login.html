@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="../css/styles.css">
+
     <title>Login</title>
   </head>
   <body>
@@ -26,7 +29,7 @@
         </ul>
       </nav>
     </header>
-    <!-- FIN  HEADER-->    
+    <!-- FIN  HEADER-->  
     
     <main>
       <h2>INGRESAR MI CUENTA</h2>
@@ -46,22 +49,25 @@
       </form>
     </main>
 
-    <!-- INICIO FOOTER -->
-    <footer>
-      <section>
-        <nav>
-          <li>
-            <a href="../pages/shop.html">SHOP</a>
-          </li>
-          <li><a href="../pages/login.html">INGRESAR</a></li>
-          <li><a href="../pages/contact.html">CONTACTO</a></li>
-          <picture>
-            <img src="../images/branding/isotype.svg" alt="Logo basico" />
-          </picture>
-        </nav>
-      </section>
-      <p>All rights reserved 2023 - Funkoshop &copy;</p>
-    </footer>
-    <!-- FIN FOOTER -->   
+      <!-- INICIO FOOTER -->
+      <footer>
+        <section>
+          <nav>
+            <li>
+                <a href="../pages/shop.html">SHOP</a>
+            </li>
+            <li><a href="../pages/login.html">INGRESAR</a></li>
+            <li><a href="../pages/contact.html">CONTACTO</a></li>
+              <!-- logo dentro de nav pq será un link -->
+            <picture> <!-- le da mas semántica a la estructura -->
+                <a href="../index.html">
+                    <img src="../images/branding/isotype.svg" alt="Isotipo de Funkoshop">
+                </a>
+            </picture>
+          </nav>
+        </section>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+      </footer>
+      <!-- FIN FOOTER --> 
   </body>
 </html>

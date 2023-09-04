@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    
+
     <title>Register</title>
 </head>
 <body>
     <!-- INICIO HEADER-->
     <header>
-        <nav>
-          <picture>
-            <a href="../index.html">
-              <img src="../images/branding/logo_light_horizontal.svg" alt="LOGO" />
+
+      <nav>
+        <picture>
+          <a href="../index.html">
+            <img src="../images/branding/logo_light_horizontal.svg" alt="LOGO" />
+          </a>
+        </picture>
+        <ul>
+          <li><a href="../pages/shop.html">SHOP</a></li>
+          <li><a href="../pages/contact.html">CONTACTO</a></li>
+          <li><a href="../pages/login.html">LOGIN</a></li>
+          <li>
+            <a href="../pages/cart.html">
+              <img src="../images/icons/cart-icon.svg" alt="logocarrito" />
             </a>
-          </picture>
-          <ul>
-            <li><a href="../pages/shop.html">SHOP</a></li>
-            <li><a href="../pages/contact.html">CONTACTO</a></li>
-            <li><a href="../pages/login.html">LOGIN</a></li>
-            <li>
-              <a href="../pages/cart.html">
-                <img src="../images/icons/cart-icon.svg" alt="logocarrito" />
-              </a>
-            </li>
-          </ul>
-        </nav>
+          </li>
+        </ul>
+      </nav>
     </header>
     <!-- FIN  HEADER-->
     
     <main>   
         <h2>CREA TU CUENTA</h2>
         <h3>Completa el formulario para ser parte del mundo de los Funkos</h3>
-        <form action="procesar_registro.php" method="POST">
+
+        <form action="" method="POST">
+
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 
@@ -53,23 +60,27 @@
             <label for="recordarme">Acepto <a href="">Términos y Condiciones</a></label>
         </form>
     </main>
-
+  
     <!-- INICIO FOOTER -->
     <footer>
-        <section>
-          <nav>
-            <li>
-              <a href="../pages/shop.html">SHOP</a>
-            </li>
-            <li><a href="../pages/login.html">INGRESAR</a></li>
-            <li><a href="../pages/contact.html">CONTACTO</a></li>
-            <picture>
-              <img src="../images/branding/isotype.svg" alt="Logo basico" />
-            </picture>
-          </nav>
-        </section>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
-      </footer>
-      <!-- FIN FOOTER -->
+      <section>
+        <nav>
+          <li>
+            <a href="../pages/shop.html">SHOP</a>
+          </li>
+          <li><a href="../pages/login.html">INGRESAR</a></li>
+          <li><a href="../pages/contact.html">CONTACTO</a></li>
+          <!-- logo dentro de nav pq será un link -->
+          <picture> <!-- le da mas semántica a la estructura -->
+            <a href="../index.html">
+                <img src="../images/branding/isotype.svg" alt="Isotipo de Funkoshop">
+            </a>
+          </picture>
+        </nav>
+      </section>
+      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+    <!-- FIN FOOTER -->
+
 </body>
 </html>
