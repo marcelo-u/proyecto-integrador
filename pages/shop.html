@@ -1,220 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/estilos.css">
-
-    <title>Home | Funkoshop</title>
-</head>
-<body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <header> <!-- header del sitio -->
-        <nav>
-            <!-- logo dentro de nav pq será un link -->
-            <picture> <!-- le da mas semántica a la estructura -->
-                <a href="../index.html">
-                    <img src="../images/branding/logo_light_horizontal.svg" alt="Isologo de Funkoshop">
-                </a>
-            </picture>
-            <ul>
-                <li>
-                    <a href="./shop.html">SHOP</a>
-                </li>
-                <li>
-                    <a href="./contacto.html">CONTACTO</a>
-                </li>
-                <li>
-                    <a href="./login.html">LOGIN</a>
-                </li>
-                <li>
-                    <a href="./carrito.html">
-                        <img src="../images/icons/cart-icon.svg" alt="icono de carrito">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Shop | Funkoshop</title>
+  </head>
+  <body>
+    <!-- INICIO HEADER-->
+    <header>
+      <nav>
+        <picture>
+          <a href="../index.html">
+            <img src="../images/branding/logo_light_horizontal.svg" alt="LOGO" />
+          </a>
+        </picture>
+        <ul>
+          <li><a href="../pages/shop.html">SHOP</a></li>
+          <li><a href="../pages/contact.html">CONTACTO</a></li>
+          <li><a href="../pages/login.html">LOGIN</a></li>
+          <li>
+            <a href="../pages/cart.html">
+              <img src="../images/icons/cart-icon.svg" alt="logocarrito" />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
-
+    <!-- FIN  HEADER-->  
+    
     <aside>
-
+      <form action="">
+        <div>
+          <label for="findby-item-cat">Buscar</label>
+          <br />
+          <input
+            type="text"
+            name="findby-item-cat"
+            placeholder="Item o categoría"
+          />
+        </div>
+        <div>
+          <label for="orderby">Ordenar Por</label>
+          <br />
+          <select name="orderby" placeholder="">
+            <option value="1" selected>Mayor a Menor</option>
+            <option value="2">Menor a Mayor</option>
+          </select>
+        </div>
+        <div>
+          <label>Precio</label>
+          <br />
+          <label for="price-min">Min</label>
+          <input type="number" name="price-min" id="price-min" /><span>
+            -
+          </span>
+          <label for="price-max">Max</label>
+          <input type="number" name="price-max" id="price-max" />
+        </div>
+        <div>
+          <label for="filter">Filtrar</label>
+          <ul>
+            <li><input type="checkbox" />Nuevos</li>
+            <li><input type="checkbox" />Ofertas</li>
+            <li><input type="checkbox" />Edición Especial</li>
+            <li><input type="checkbox" />Favoritos</li>
+          </ul>
+        </div>
+      </form>
     </aside>
-
+    
     <main>
-        
-        <section>
-            <ul> <!-- se usa ul/li en vez de div porque tiene sentido semantico: c/elemento forma parte del carrucel-->
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/star-wars/trooper-1.webp" alt="Figura Strormtrooper">
-                            </picture>
-                            <div>
-                                <p>Star Wars</p>
-                                <h4>Stormtrooper Lightsaber</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/pokemon/pidgeotto-1.webp" alt="Figura Pidgeotto Pokemon">
-                            </picture>
-                            <div>
-                                <p>Pokemon</p>
-                                <h4>Pidgeotto</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/harry-potter/luna-1.webp" alt="Figura Luna Lovegood">
-                            </picture>
-                            <div>
-                                <p>Harry Potter</p>
-                                <h4>Luna Lovegood Lion Mask</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/star-wars/trooper-1.webp" alt="Figura Strormtrooper">
-                            </picture>
-                            <div>
-                                <p>Star Wars</p>
-                                <h4>Stormtrooper Lightsaber</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/pokemon/pidgeotto-1.webp" alt="Figura Pidgeotto Pokemon">
-                            </picture>
-                            <div>
-                                <p>Pokemon</p>
-                                <h4>Pidgeotto</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/harry-potter/luna-1.webp" alt="Figura Luna Lovegood">
-                            </picture>
-                            <div>
-                                <p>Harry Potter</p>
-                                <h4>Luna Lovegood Lion Mask</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/star-wars/trooper-1.webp" alt="Figura Strormtrooper">
-                            </picture>
-                            <div>
-                                <p>Star Wars</p>
-                                <h4>Stormtrooper Lightsaber</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/pokemon/pidgeotto-1.webp" alt="Figura Pidgeotto Pokemon">
-                            </picture>
-                            <div>
-                                <p>Pokemon</p>
-                                <h4>Pidgeotto</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <a href="http://">
-                            <picture>
-                                <img src="../images/harry-potter/luna-1.webp" alt="Figura Luna Lovegood">
-                            </picture>
-                            <div>
-                                <p>Harry Potter</p>
-                                <h4>Luna Lovegood Lion Mask</h4>
-                                <p>$1799,99</p>
-                                <p>3 cuotas sin interes</p>
-                            </div>
-                        </a>
-                    </article>
-                </li>
-            </ul>
-        </section>
-
-        <section>
-            <p>paginacion</p>
-        </section>
-    </main>
-
-    <footer>
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="./shop.html">SHOP</a>
-                    </li>
-                    <li>
-                        <a href="./login.html">INGRESAR</a>
-                    </li>
-                    <li>
-                        <a href="./contacto.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <!-- logo dentro de nav pq será un link -->
-                <picture> <!-- le da mas semántica a la estructura -->
-                    <a href="../index.html">
-                        <img src="../images/branding/isotype.svg" alt="Isotipo de Funkoshop">
-                    </a>
+      <section>
+        <ul>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/star-wars/trooper-1.webp"
+                    alt="Figura coleccionable Funko  Stormtrooper"
+                  />
                 </picture>
-            </nav>
-        </section>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+                <div>
+                  <p>Star Wars</p>
+                  <h4>Strormtrooper Lightsaber</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/pokemon/pidgeotto-1.webp"
+                    alt="figura coleccionable Funko Pidgeoto"
+                  />
+                </picture>
+                <div>
+                  <p>Pokemon</p>
+                  <h4>Pidgeotto</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/harry-potter/luna-1.webp"
+                    alt="figura coleccionable Funko Luna"
+                  />
+                </picture>
+                <div>
+                  <p>Harry Potter</p>
+                  <h4>Luna Lovegood Lion Mask</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/star-wars/trooper-1.webp"
+                    alt="figura coleccionable Funko  Stormtrooper"
+                  />
+                </picture>
+                <div>
+                  <p>Star Wars</p>
+                  <h4>Strormtrooper Lightsaber</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/pokemon/pidgeotto-1.webp"
+                    alt="figura coleccionable Funko Pidgeoto"
+                  />
+                </picture>
+                <div>
+                  <p>Pokemon</p>
+                  <h4>Pidgeotto</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/harry-potter/luna-1.webp"
+                    alt="figura coleccionable Funko Luna"
+                  />
+                </picture>
+                <div>
+                  <p>Harry Potter</p>
+                  <h4>Luna Lovegood Lion Mask</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/star-wars/trooper-1.webp"
+                    alt="figura coleccionable Funko  Stormtrooper"
+                  />
+                </picture>
+                <div>
+                  <p>Star Wars</p>
+                  <h4>Strormtrooper Lightsaber</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/pokemon/pidgeotto-1.webp"
+                    alt="figura coleccionable Funko Pidgeoto"
+                  />
+                </picture>
+                <div>
+                  <p>Pokemon</p>
+                  <h4>Pidgeotto</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="./item.html">
+                <picture>
+                  <img
+                    src="../images/harry-potter/luna-1.webp"
+                    alt="figura coleccionable Funko Luna"
+                  />
+                </picture>
+                <div>
+                  <p>Harry Potter</p>
+                  <h4>Luna Lovegood Lion Mask</h4>
+                  <p>$1799,99</p>
+                  <p>3 CUOTAS SIN INTERÉS</p>
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </section>
+      
+      <section><!-- PAGINACIÓN -->
+        <div>
+          <a href="#"> < </a>
+          <a href="">1</a>
+          <a href="">2</a>
+          <a href="">...</a>
+          <a href="">9</a>
+          <a href="">10</a>
+          <a href=""> > </a>
+        </div>
+      </section>
+    </main>
+    
+    <!-- INICIO FOOTER -->
+    <footer>
+      <section>
+        <nav>
+          <li>
+            <a href="../pages/shop.html">SHOP</a>
+          </li>
+          <li><a href="../pages/login.html">INGRESAR</a></li>
+          <li><a href="../pages/contact.html">CONTACTO</a></li>
+          <!-- logo dentro de nav pq será un link -->
+          <picture> <!-- le da mas semántica a la estructura -->
+            <a href="../index.html">
+                <img src="../images/branding/isotype.svg" alt="Isotipo de Funkoshop">
+            </a>
+          </picture>
+        </nav>
+      </section>
+      <p>All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
-
-
-</body>
+    <!-- FIN FOOTER -->
+  </body>
 </html>
