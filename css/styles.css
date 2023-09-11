@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap');
 
+
+/* Variables Normalizadas */
 :root { /* seudonimo de 'html', para declarar las variables que voy a usar en css */
     /* palette */
     --primary-solid: #ff3333;
@@ -52,6 +54,8 @@
     --spacing-8: 0.8rem;
 }
 
+/* Estilos generales */
+
 *,
 *::before,
 *::after {
@@ -71,16 +75,18 @@ html { /* todos los estilos heredables pasan a los hijos y como es la etiqueta r
     color: var(--dark-solid);
 }
 
-header,
+
 footer {
     font-family: var(--alternative-font);
     color: var(--light-font-solid); 
     background-color: var(--dark-bg-solid);
 }
+
+
 a {
     text-decoration: none; /* quita subrayado */
     font-family: inherit; /* Raleway o Inter, según el caso */
-    font-size: 2em; /* 20px */
+    font-size: 2em; 
     color: inherit; /* tomar el heredado: header y footer:blanco, resto:negro (esto es un 'hack') */
 }
 
@@ -92,14 +98,145 @@ p {
     font-size: 1.8em; /* 18px */
 }
 
+.container{ max-width: 1200px;
+    margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+}
+
+
 
 .container header footer { /* clase utilitaria para setear estilos de los contenedores ppales */
     max-width: 1200px;
     margin: 0 auto; /* top/bottom:0 y left/right: igualados */
 }
 
-/* estilos header y footer */
-.navbar-header, .navbar-footer, .menu-header {
+img{width:100% ;}
+
+
+
+/* HEADER */
+
+header{
+    
+        font-family: var(--alternative-font);
+        color: var(--light-font-solid); 
+        background-color: var(--dark-bg-solid);
+        padding: var(--spacing-36);
+    
+}
+/* Navbar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar__logo{max-width: 300px;}
+
+
+
+.navbar__menu{display: flex;
+align-items: center;
+gap: var(--spacing-20);}
+
+.navbar__item{ font-size: var(--font-medium);}
+
+.navbar__link{
+    font-size: var(--font-small);
+    font-family: var(--alternative-font);
+    display: inline-block;
+    padding: var(--spacing-8) var(--spacing-16);
+    transition:background .3s ease-in-out;
+    position: relative;
+}
+.navbar__link:hover{background-color:var(--primary-900);}
+
+.with_icon{
+    display:flex;
+    align-items: center;
+    gap:var(--spacing-8)
+    
+}
+
+.with__menu:hover .submenu{
+    display:block
+}
+
+.submenu{
+    display: none;
+    width: 300px;
+    position: absolute;
+    background-color: var(--dark-bg-solid);
+    }
+
+.submenu__item{
+    display: block;
+    padding: var(--spacing-8) var(--spacing-16);
+    font-size: var(--font-medium);
+    transition:background .3s ease-in-out;
+
+}
+.submenu__item:hover{background-color:var(--primary-900);}
+
+/* Hero */
+
+
+.hero{background-image:url(../images/funkos-banner.webp) ;
+padding: var(--spacing-128);
+background-position: top;
+background-size: cover;
+background-attachment: fixed;
+position:relative}
+
+.hero::before{ content:"" ;
+    background-color: rgba(0,0,0,0);
+     position:absolute ;
+    width: 100%;height:100%;
+top:0;
+left:0;
+backdrop-filter:blur(2px) brightness(.9);
+z-index:1}
+
+.hero__content{display:flex;
+    flex-direction: column;
+gap:var(--spacing-20);
+align-items: start;
+position: relative;
+z-index: 2;}
+
+
+.hero__title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+    color:var(--light-font-solid)
+}
+
+.hero__text{
+    font-family: var(--alternative-font);
+    font-size: var(--font-medium);
+    color: var(--light-font-solid);
+    
+}
+.hero__link{
+    display: inline-block;
+    font-size: var(--font-medium);
+    background-color: var(--light-bg-solid);
+    padding: 12px 68px ;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+
+.hero__link:hover{
+    background-color: var(--primary-900);
+    color:light var(--light-font-solid)
+}
+
+
+/* EStilos con nomenclatura de Marcelo */
+/*  
+.navbar-footer, .menu-header {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -126,11 +263,15 @@ p {
 .copyright {
     text-align: center;
     padding-bottom: var(--spacing-36);
-} 
+}  */
+
+/* footer */
+
 
 /* FIN estilos header y footer */
 
 /* INICIO HERO */ 
+/* 
 .hero-section {
     box-sizing: border-box;
     background-image: url('../images/funkos-banner.webp');
@@ -167,7 +308,7 @@ p {
     color: var(--dark-solid);
     padding: var(--spacing-8) var(--spacing-68);
     font-size: var(--font-medium);
-}
+} */
 
 
 

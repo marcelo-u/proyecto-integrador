@@ -11,9 +11,9 @@
   <body>
     <!-- INICIO HEADER-->
     <header>
-      <nav class="navbar-header">
+      <nav class="navbar container">
         <!-- logo dentro de nav pq será un link -->
-        <picture>
+        <picture class="navbar__logo">
           <!-- le da mas semántica a la estructura -->
           <a href="./index.html">
             <img
@@ -22,12 +22,26 @@
             />
           </a>
         </picture>
-        <ul class="menu-header">
-          <li><a href="./pages/shop.html">SHOP</a></li>
-          <li><a href="./pages/contact.html">CONTACTO</a></li>
-          <li><a href="./pages/login.html">LOGIN</a></li>
-          <li>
-            <a href="./pages/cart.html">
+        <ul class="navbar__menu">
+          <li class="navbar__item with__menu">
+            <a class="navbar__link with_icon" href="./pages/shop.html">SHOP <iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="" class="submenu__item">Funkos</a></li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__item">Remeras</a></li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__item">Llaveros</a></li>
+            </ul></a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./pages/login.html">LOGIN</a>
+          </li>
+          <li class="navbar__item">
+            <a  href="./pages/cart.html">
               <img src="./images/icons/cart-icon.svg" alt="Icono de carrito" />
             </a>
           </li>
@@ -36,19 +50,22 @@
     </header>
 
     <!-- FIN  HEADER-->
+    <section class="hero">
+      <!-- BANNER -->
+      <!-- la imagen de fondo se puede agregar como background con CSS -->
+      <article class="hero__content container">
+        <div >
+          <h3  class="hero__title "> Nuevos Ingresos</h3>
+          <p  class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+        </div>
+        <a  class="hero__link" href="./pages/shop.html">SHOP</a>
+      </article>
+    
+    </section>
+
 
     <main class="container">
-      <section class="hero-section">
-        <!-- BANNER -->
-        <!-- la imagen de fondo se puede agregar como background con CSS -->
-        <article class="hero-banner">
-          <div class="hero-titles">
-            <h3>Nuevos Ingresos</h3>
-            <p>Descubrí el próximo Funko Pop de tu colección</p>
-          </div>
-          <a href="./pages/shop.html">SHOP</a>
-        </article>
-      </section>
+      
 
       <!-- COLECCIONES -->
       <section>
@@ -189,5 +206,7 @@
       <p class="copyright">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     <!-- FIN FOOTER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   </body>
 </html>
