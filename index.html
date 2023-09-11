@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="./css/styles.css">
-    
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
     <title>Home | Funkoshop</title>
   </head>
   <body>
     <!-- INICIO HEADER-->
     <header>
-      <nav>
+      <nav class="navbar-header">
         <!-- logo dentro de nav pq será un link -->
-        <picture> <!-- le da mas semántica a la estructura -->
+        <picture>
+          <!-- le da mas semántica a la estructura -->
           <a href="./index.html">
-            <img src="./images/branding/logo_light_horizontal.svg" alt="Isologo de Funkoshop"/>
+            <img
+              src="./images/branding/logo_light_horizontal.svg"
+              alt="Isologo de Funkoshop"
+            />
           </a>
         </picture>
-        <ul>
+        <ul class="menu-header">
           <li><a href="./pages/shop.html">SHOP</a></li>
           <li><a href="./pages/contact.html">CONTACTO</a></li>
           <li><a href="./pages/login.html">LOGIN</a></li>
@@ -30,12 +34,14 @@
         </ul>
       </nav>
     </header>
+
     <!-- FIN  HEADER-->
-    
+
     <main class="container">
-      <section> <!-- BANNER -->
-      <!-- la imagen de fondo se puede agregar como background con CSS -->
-        <article>
+      <section class="hero-section">
+        <!-- BANNER -->
+        <!-- la imagen de fondo se puede agregar como background con CSS -->
+        <article class="hero-banner">
           <h3>Nuevos Ingresos</h3>
           <p>Descubrí el próximo Funko Pop de tu colección</p>
           <a href="./pages/shop.html">SHOP</a>
@@ -43,25 +49,34 @@
       </section>
 
       <!-- COLECCIONES -->
-      <section><!-- box modeling (modelo de caja) -->
-        <article> 
+      <section>
+        <!-- box modeling (modelo de caja) -->
+        <article>
           <h3>Star Wars & The Mandalorian</h3>
-          <p>Disfrutá de una saga que sigue agregando personajes a su colección.</p>
+          <p>
+            Disfrutá de una saga que sigue agregando personajes a su colección.
+          </p>
           <a href="./pages/shop.html">VER COLECCIÓN</a>
         </article>
         <picture>
-              <img src="./images/star-wars/baby-yoda-1.webp" alt="baby yoda">
-      </picture>
+          <img src="./images/star-wars/baby-yoda-1.webp" alt="baby yoda" />
+        </picture>
       </section>
 
       <section>
         <article>
           <h3>Pokemon Indigo</h3>
-          <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
+          <p>
+            Atrapa todos los que puedas y disfruta de una colección llena de
+            amigos.
+          </p>
           <a href="./pages/shop.html">VER COLECCIÓN</a>
         </article>
         <picture>
-          <img src="./images/pokemon/vulpix-1.webp" alt="pokemon vulpix funko" />
+          <img
+            src="./images/pokemon/vulpix-1.webp"
+            alt="pokemon vulpix funko"
+          />
         </picture>
       </section>
 
@@ -79,15 +94,19 @@
         </picture>
       </section>
 
-       <!-- ULTIMOS LANZAMIENTOS -->
+      <!-- ULTIMOS LANZAMIENTOS -->
       <section>
         <h2>ULTIMOS LANZAMIENTOS</h2>
-        <ul><!-- se usa ul/li en vez de div porque tiene sentido semantico: c/elemento forma parte del carrucel-->
+        <ul>
+          <!-- se usa ul/li en vez de div porque tiene sentido semantico: c/elemento forma parte del carrucel-->
           <li>
             <article>
-              <a href="./item.html">
+              <a href="./pages/item.html">
                 <picture>
-                  <img src="./images/star-wars/trooper-1.webp" alt="Figura coleccionable Funko  Stormtrooper"/>
+                  <img
+                    src="./images/star-wars/trooper-1.webp"
+                    alt="Figura coleccionable Funko  Stormtrooper"
+                  />
                 </picture>
                 <div>
                   <p>Star Wars</p>
@@ -100,9 +119,12 @@
           </li>
           <li>
             <article>
-              <a href="./item.html">
+              <a href="./pages/item.html">
                 <picture>
-                  <img src="./images/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko Pidgeoto"/>
+                  <img
+                    src="./images/pokemon/pidgeotto-1.webp"
+                    alt="Figura coleccionable Funko Pidgeoto"
+                  />
                 </picture>
                 <div>
                   <p>Pokemon</p>
@@ -115,9 +137,12 @@
           </li>
           <li>
             <article>
-              <a href="./item.html">
+              <a href="./pages/item.html">
                 <picture>
-                  <img src="./images/harry-potter/luna-1.webp" alt="Figura coleccionable Funko Luna"/>
+                  <img
+                    src="./images/harry-potter/luna-1.webp"
+                    alt="Figura coleccionable Funko Luna"
+                  />
                 </picture>
                 <div>
                   <p>Harry Potter</p>
@@ -131,31 +156,35 @@
         </ul>
       </section>
     </main>
-    
+
     <!-- INICIO FOOTER -->
     <footer>
       <section>
-          <nav>
-              <ul>
-                  <li>
-                      <a href="./pages/shop.html">SHOP</a>
-                  </li>
-                  <li>
-                      <a href="./pages/login.html">INGRESAR</a>
-                  </li>
-                  <li>
-                      <a href="./pages/contacto.html">CONTACTO</a>
-                  </li>
-              </ul>
-              <!-- logo dentro de nav pq será un link -->
-              <picture> <!-- le da mas semántica a la estructura -->
-                  <a href="./index.html">
-                      <img src="./images/branding/isotype.svg" alt="Isotipo de Funkoshop">
-                  </a>
-              </picture>
-          </nav>
+        <nav class="navbar-footer">
+          <ul>
+            <li>
+              <a href="./pages/shop.html">SHOP</a>
+            </li>
+            <li>
+              <a href="./pages/login.html">INGRESAR</a>
+            </li>
+            <li>
+              <a href="./pages/contacto.html">CONTACTO</a>
+            </li>
+          </ul>
+          <!-- logo dentro de nav pq será un link -->
+          <picture>
+            <!-- le da mas semántica a la estructura -->
+            <a href="./index.html">
+              <img
+                src="./images/branding/isotype.svg"
+                alt="Isotipo de Funkoshop"
+              />
+            </a>
+          </picture>
+        </nav>
       </section>
-      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+      <p class="copyright">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     <!-- FIN FOOTER -->
   </body>

@@ -77,7 +77,6 @@ footer {
     color: var(--light-font-solid); 
     background-color: var(--dark-bg-solid);
 }
-
 a {
     text-decoration: none; /* quita subrayado */
     font-family: inherit; /* Raleway o Inter, según el caso */
@@ -99,5 +98,41 @@ p {
     margin: 0 auto; /* top/bottom:0 y left/right: igualados */
 }
 
+/* estilos header y footer */
+.navbar-header, .navbar-footer, .menu-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
 
+.navbar-header, .menu-header {
+    padding: 25px 50px;
+}
+
+.navbar-footer {
+    padding: 50px 50px;
+}
+
+.menu-header li {
+    margin-left: 30px;
+}
+
+.navbar-footer {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.copyright {
+    text-align: center;
+    padding-bottom: 20px;
+} 
+
+/* FIN estilos header y footer */
+
+/* hero */ 
+
+.hero-section {
+    background-image: url('../images/funkos-banner.webp');
+}
 
