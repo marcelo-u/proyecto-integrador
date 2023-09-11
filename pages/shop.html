@@ -3,21 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="stylesheet" href="../css/styles.css" />
 
     <title>Shop | Funkoshop</title>
   </head>
   <body>
     <!-- INICIO HEADER-->
     <header>
-      <nav>
+      <nav class="navbar-header">
         <picture>
           <a href="../index.html">
-            <img src="../images/branding/logo_light_horizontal.svg" alt="LOGO" />
+            <img
+              src="../images/branding/logo_light_horizontal.svg"
+              alt="LOGO"
+            />
           </a>
         </picture>
-        <ul>
+        <ul class="menu-header">
           <li><a href="../pages/shop.html">SHOP</a></li>
           <li><a href="../pages/contact.html">CONTACTO</a></li>
           <li><a href="../pages/login.html">LOGIN</a></li>
@@ -29,8 +32,8 @@
         </ul>
       </nav>
     </header>
-    <!-- FIN  HEADER-->  
-    
+    <!-- FIN  HEADER-->
+
     <aside>
       <form action="">
         <div>
@@ -71,7 +74,7 @@
         </div>
       </form>
     </aside>
-    
+
     <main>
       <section>
         <ul>
@@ -239,8 +242,9 @@
           </li>
         </ul>
       </section>
-      
-      <section><!-- PAGINACIÓN -->
+
+      <section>
+        <!-- PAGINACIÓN -->
         <div>
           <a href="#"> < </a>
           <a href="">1</a>
@@ -252,25 +256,31 @@
         </div>
       </section>
     </main>
-    
+
     <!-- INICIO FOOTER -->
     <footer>
       <section>
-        <nav>
-          <li>
-            <a href="../pages/shop.html">SHOP</a>
-          </li>
-          <li><a href="../pages/login.html">INGRESAR</a></li>
-          <li><a href="../pages/contact.html">CONTACTO</a></li>
+        <nav class="navbar-footer">
+          <ul>
+            <li>
+              <a href="../pages/shop.html">SHOP</a>
+            </li>
+            <li><a href="../pages/login.html">INGRESAR</a></li>
+            <li><a href="../pages/contact.html">CONTACTO</a></li>
+          </ul>
           <!-- logo dentro de nav pq será un link -->
-          <picture> <!-- le da mas semántica a la estructura -->
+          <picture>
+            <!-- le da mas semántica a la estructura -->
             <a href="../index.html">
-                <img src="../images/branding/isotype.svg" alt="Isotipo de Funkoshop">
+              <img
+                src="../images/branding/isotype.svg"
+                alt="Isotipo de Funkoshop"
+              />
             </a>
           </picture>
         </nav>
       </section>
-      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+      <p class="copyright">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     <!-- FIN FOOTER -->
   </body>
