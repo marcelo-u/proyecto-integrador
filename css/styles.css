@@ -76,11 +76,7 @@ html { /* todos los estilos heredables pasan a los hijos y como es la etiqueta r
 }
 
 
-footer {
-    font-family: var(--alternative-font);
-    color: var(--light-font-solid); 
-    background-color: var(--dark-bg-solid);
-}
+
 
 
 a {
@@ -346,8 +342,17 @@ position: relative;}
     right: 0;
 
 }
+ 
+/* Footer */
 
+footer {
+    font-family: var(--alternative-font);
+    padding: var(--spacing-68);
+    color: var(--light-font-solid); 
+    background-color: var(--dark-bg-solid);
+}
 
+.footer__copy{text-align: center;margin-top: var(--spacing-36);}
 
 /* EStilos con nomenclatura de Marcelo */
 /*  
