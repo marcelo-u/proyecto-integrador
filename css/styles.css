@@ -82,7 +82,6 @@ html { /* todos los estilos heredables pasan a los hijos y como es la etiqueta r
 a {
     text-decoration: none; /* quita subrayado */
     font-family: inherit; /* Raleway o Inter, según el caso */
-    font-size: 2em; 
     color: inherit; /* tomar el heredado: header y footer:blanco, resto:negro (esto es un 'hack') */
 }
 
@@ -91,11 +90,12 @@ ul, ol {
 }
 
 p {
-    font-size: 1.8em; /* 18px */
+    font-size: var(--font-xsmall) /* 18px */
 }
 
 .container{ max-width: 1200px;
     margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+    padding: 0 var(--spacing-128);
 }
 
 
@@ -116,7 +116,7 @@ header{
         font-family: var(--alternative-font);
         color: var(--light-font-solid); 
         background-color: var(--dark-bg-solid);
-        padding: var(--spacing-36);
+        padding: var(--spacing-36) 0
     
 }
 /* Navbar */
@@ -128,22 +128,23 @@ header{
 
 }
 
-.navbar__logo{max-width: 300px;}
+.navbar__logo{
+    max-width: 300px;
+}
 
 
 
 .navbar__menu{display: flex;
 align-items: center;
-gap: var(--spacing-20);}
-
-.navbar__item{ font-size: var(--font-medium);}
+gap: var(--spacing-20);
+}
 
 .navbar__link{
     font-size: var(--font-small);
     font-family: var(--alternative-font);
     display: inline-block;
     padding: var(--spacing-8) var(--spacing-16);
-    transition:background .3s ease-in-out;
+    transition: background .3s ease-in-out;
     position: relative;
 }
 .navbar__link:hover{background-color:var(--primary-900);}
@@ -179,7 +180,7 @@ gap: var(--spacing-20);}
 
 
 .hero{background-image:url(../images/funkos-banner.webp) ;
-padding: var(--spacing-128);
+padding: var(--spacing-128) 0;
 background-position: top;
 background-size: cover;
 background-attachment: fixed;
@@ -235,12 +236,11 @@ z-index: 2;}
     display:grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-16) var(--spacing-128);
 
 }
  /* Trucazo de hijos para invertir el sentido */
  .coletion:nth-child(2) .coletion__cover{order:-1;}
-
 
 .coletion__content{
     display: flex;
@@ -288,7 +288,7 @@ margin: var(--spacing-68) auto;}
 
 .slider__title{
     font-family: var(--alternative-font);
-    font-size: var(--font-display);
+    font-size: var(--font-xlarge);
     text-transform: capitalize;
 }
 
@@ -300,20 +300,20 @@ margin: var(--spacing-68) auto;}
     padding: var(--spacing-16);
 }
 
-.card-item__licence{
-    font-size: var(--font-small) ;
+.card-item__license{
+    font-size: (--font-xsmall) ;
     font-weight:500 ;
 }
 .card-item__name{
-    font-size: var(--font-medium);
+    font-size: var(--font-small);
     font-weight:700 ;
 }
 .card-item__price{
-    font-size: var(--font-small) ;
+    font-size: var(--font-xsmall) ;
     font-weight:500 ;
 }
 .card-item__promo{
-    font-size: var(--font-small) ;
+    font-size: var(--font-xsmall) ;
     font-weight:500 ;
     color: var(--secondary-solid);
 }
@@ -347,7 +347,7 @@ position: relative;}
 
 footer {
     font-family: var(--alternative-font);
-    padding: var(--spacing-68);
+    padding: var(--spacing-68) 0;
     color: var(--light-font-solid); 
     background-color: var(--dark-bg-solid);
 }
