@@ -116,8 +116,7 @@ header{
         font-family: var(--alternative-font);
         color: var(--light-font-solid); 
         background-color: var(--dark-bg-solid);
-        padding: var(--spacing-36) 0
-    
+        padding: var(--spacing-36);
 }
 /* Navbar */
 
@@ -170,7 +169,7 @@ gap: var(--spacing-20);
 .submenu__item{
     display: block;
     padding: var(--spacing-8) var(--spacing-16);
-    font-size: var(--font-medium);
+    font-size: var(--font-xsmall);
     transition:background .3s ease-in-out;
 
 }
