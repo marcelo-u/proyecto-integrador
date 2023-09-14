@@ -239,7 +239,7 @@ z-index: 2;}
 
 }
  /* Trucazo de hijos para invertir el sentido */
- .coletion:nth-child(2) .coletion__cover{order:-1;}
+ .coletion:nth-child(3) .coletion__cover{order:-1;}
 
 .coletion__content{
     display: flex;
