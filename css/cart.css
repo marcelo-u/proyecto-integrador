@@ -1,11 +1,11 @@
-.footer_cart{
+/* .footer_cart{
     position: absolute;
     width: 100%;
     bottom: 0;
-}
+} */
 
 .main_shop{
-   margin: var(--spacing-68);    
+   margin: var(--spacing-68);  
 }
 
 /* Titulos */
