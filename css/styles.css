@@ -28,6 +28,8 @@
     --terciary-500: rgba(255, 22, 84, 0.5);
     --terciary-300: rgba(255, 22, 84, 0.3);
 
+    --hover-option1: #e40000;
+
     /* typography */
     --base-font: 'Inter', sans-serif;
     --alternative-font: 'Raleway', sans-serif;
@@ -75,10 +77,6 @@ html { /* todos los estilos heredables pasan a los hijos y como es la etiqueta r
     color: var(--dark-solid);
 }
 
-
-
-
-
 a {
     text-decoration: none; /* quita subrayado */
     font-family: inherit; /* Raleway o Inter, según el caso */
@@ -106,8 +104,6 @@ p {
 }
 
 img{width:100% ;}
-
-
 
 /* HEADER */
 
@@ -346,12 +342,12 @@ position: relative;}
 
 footer {
     font-family: var(--alternative-font);
-    padding: var(--spacing-68) 0;
+    padding: var(--spacing-24) 0;
     color: var(--light-font-solid); 
     background-color: var(--dark-bg-solid);
 }
 
-.footer__copy{text-align: center;margin-top: var(--spacing-36);}
+.footer__copy{text-align: center;}
 
 /* EStilos con nomenclatura de Marcelo */
 /*  
