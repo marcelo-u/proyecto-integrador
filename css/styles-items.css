@@ -157,9 +157,14 @@ font-size: var(--font-medium);
 .producto_content_sell_seletion{
     display: flex;
 flex-direction: column;
-padding:0;
-margin:0
+height: 20px
 ;}
+
+   .pay_item{
+       color:white;
+    background-color: rgb(85, 85, 85)
+;padding: 6px;
+margin:2px}
 
 
 .producto_tag{ 
@@ -181,4 +186,3 @@ margin:0
  .main_slider{
     padding-bottom: var(--spacing-68);
  }
-   
