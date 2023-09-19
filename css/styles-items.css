@@ -157,7 +157,8 @@ font-size: var(--font-medium);
 .producto_content_sell_seletion{
     display: flex;
 flex-direction: column;
-padding:var(--spacing-8);
+padding:0;
+margin:0
 ;}
 
 
