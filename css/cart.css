@@ -36,6 +36,7 @@
     align-items: center;
 }
 
+/* Contenedor item */
 .cart_item_description{
     width: 34%;
     height: 10%;
@@ -47,6 +48,39 @@
     width: 40%;
     margin-right: 10px;
 }
+
+/* Control Cantidad */
+.custom-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-text {
+    width: 40px; /* Ajusta el ancho según tus necesidades */
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    padding: 5px;
+  }
+  
+  .custom-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .custom-decrement,
+  .custom-increment {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 2px 5px;
+  }
 
 
 /* Textos */
@@ -70,6 +104,7 @@ display: inline-flex;
 flex-direction: column;
 margin-left: 55%;
 padding-top: var(--spacing-36);
+padding-bottom: var(--spacing-36);
 }
 
 
@@ -109,5 +144,3 @@ padding-top: var(--spacing-36);
     border-top: 2px solid #FF3333;
     font-weight: 700;
 }
-
-

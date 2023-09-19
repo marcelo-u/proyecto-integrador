@@ -344,12 +344,16 @@ position: relative;}
 
 footer {
     font-family: var(--alternative-font);
-    padding: var(--spacing-24) 0;
+    padding: var(--spacing-68) 0;
     color: var(--light-font-solid); 
     background-color: var(--dark-bg-solid);
+    padding-bottom: var(--spacing-12);
 }
 
-.footer__copy{text-align: center;}
+.footer__copy{
+    text-align: center;
+    margin-top: var(--spacing-36);
+}
 
 /* EStilos con nomenclatura de Marcelo */
 /*  
