@@ -1,8 +1,8 @@
-.footer_cart{
+/* .footer_cart{
     position: absolute;
     width: 100%;
     bottom: 0;
-}
+} */
 
 .main_shop{
    margin: var(--spacing-68);    
@@ -12,8 +12,8 @@
 .cart_tittle{
     display: inline-block;
     font: var(--alternative-font);
-    font-weight: 600;
-    font-size: var(--font-large);
+    font-weight: 700;
+    font-size: var(--font-xlarge);
     border-bottom: 3px solid var(--primary-solid);
     padding: 0px 0px 8px 0px;
 }
@@ -28,13 +28,25 @@
     margin-bottom: var(--spacing-12);
 }
 
+.rad_shad_container.cart_item{
+    display: flex;
+    padding: 16px;
+    border-radius: 25px;
+    justify-content: space-between;
+
+}
+
+.cart_item_desc{
+    width: 34%;
+}
+
 /* Textos */
 .primary_text{
     display: flex;
     justify-content: space-between;
     font: var(--base-font);
     font-size: var(--font-xsmall);
-    font-weight: 600;
+    font-weight: 700;
     padding: var(--spacing-8);
 }
 
@@ -44,6 +56,7 @@ width: 45%;
 display: inline-flex;
 flex-direction: column;
 margin-left: 55%;
+padding-top: var(--spacing-36);
 }
 
 
