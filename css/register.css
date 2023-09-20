@@ -28,10 +28,6 @@ label {
     color: #000;
     font-family: var(--base-font);
     font-size: var(--font-medium);
-/*    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.96px;*/
     text-align: left;
 }
     
@@ -40,14 +36,12 @@ label {
     width: 80rem;
     margin:auto;
     grid-template-columns: repeat(12,1fr);
-    /*grid-template-rows: 2fr 2fr repeat(6,1fr);*/
     padding: var(--spacing-36) var(--spacing-128);     /* top/bottom y left/right */
     row-gap: var(--spacing-16);
 }
 
 .form--grid > label {
     grid-column: 3 / 7;
-  /*  margin: var(--spacing-16) 0;*/
 } 
 
 .form--grid > input {
@@ -77,31 +71,13 @@ label {
 .form--grid .aceptar {
     grid-column: 6 / 13;
     font-size: var(--font-xsmall);
-  /*  margin: var(--spacing-16) 0;*/
   padding: var(--spacing-8) var(--spacing-12);
 } 
 
 .form--grid .aceptar > a {
     color: var(--secondary-solid);
 } 
-/*
-form {
 
-    
-    grid-template-areas: "h2 h2" 
-                        "h3 h3"
-                        "label input" 
-                        "label input" 
-                        "label input" 
-                        "label input" 
-                        "label input" 
-                        "label input" 
-                        "input input label";
-    
-    
- 
-}
-*/
 
 
 
