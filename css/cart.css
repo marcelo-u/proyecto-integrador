@@ -179,6 +179,10 @@
     }
 
 /* id */
+#titulo_carritodecompras{
+margin-bottom: var(--spacing-28);
+}
+
 #det_can_tot{
     display: grid;
     grid-template-columns: 1.8fr 1fr 1fr auto; /* Define cuatro columnas */
