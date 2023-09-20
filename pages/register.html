@@ -5,92 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles-register.css" />
 
-    <title>Register</title>
+    <title>Register | Funkoshop</title>
   </head>
   <body>
     <!-- INICIO HEADER-->
-    <header>
-      <nav class="navbar-header">
-        <picture>
-          <a href="../index.html">
-            <img
-              src="../images/branding/logo_light_horizontal.svg"
-              alt="LOGO"
-            />
-          </a>
-        </picture>
-        <ul class="menu-header">
-          <li><a href="../pages/shop.html">VER TIENDA</a></li>
-          <li><a href="../pages/login.html">ADMIN</a></li>
-          <li><a href="../index.html">SALIR</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- FIN  HEADER-->
+  <header>
+    <nav class="navbar container">
+      <!-- logo dentro de nav pq será un link -->
+      <picture class="navbar__logo">
+        <!-- le da mas semántica a la estructura -->
+        <a href="../index.html">
+          <img
+            src="../images/branding/logo_light_horizontal.svg"
+            alt="Isologo de Funkoshop"
+          />
+        </a>
+      </picture>
+      <ul class="navbar__menu--admin">
+        <li class="navbar__item with__menu">
+          <a class="navbar__link with_icon" href="../pages/shop.html">VER TIENDA</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="../pages/admin.html">ADMIN</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="../pages/login.html">SALIR</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- FIN  HEADER-->
 
-    <main>
-      <h2>CREA TU CUENTA</h2>
-      <h3>Completa el formulario para ser parte del mundo de los Funkos</h3>
+  <main class="main container">
+    <h2>CREA TU CUENTA</h2>
+    <h3>Completa el formulario para ser parte del mundo de los Funkos</h3>
 
-      <form action="" method="POST">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required />
+    <form class="form--grid" action="" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required />
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="nombre@correo.com.ar" required />
 
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required />
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" placeholder="********" required />
 
-        <label for="repita_contrasena">Repita Contraseña:</label>
-        <input
-          type="password"
-          id="repita_contrasena"
-          name="repita_contrasena"
-          required
-        />
+      <label for="repita_contrasena">Repita Contraseña:</label>
+      <input type="password" id="repita_contrasena" name="repita_contrasena" placeholder="********" required />
 
-        <input type="submit" value="Registrar" />
+      <input type="submit" value="Registrar" />
+      <input type="checkbox" id="recordarme" name="recordarme" required />
+      <label for="recordarme" class="aceptar">Acepto <a href="">Términos y Condiciones</a></label>
+  </form>
+  </main>
 
-        <input type="checkbox" id="recordarme" name="recordarme" required />
-        <label for="recordarme"
-          >Acepto <a href="">Términos y Condiciones</a></label
-        >
-      </form>
-    </main>
-
-    <!-- INICIO FOOTER -->
-    <footer>
-      <section>
-        <nav class="navbar-footer">
-          <ul>
-            <li>
-              <a href="../pages/shop.html">SHOP</a>
-            </li>
-            <li>
-              <a href="../pages/register.html">REGISTRARME</a>
-            </li>
-            <li><a href="../pages/login.html">INGRESAR</a></li>
-            <li><a href="../pages/contact.html">CONTACTO</a></li>
-          </ul>
-          <!-- logo dentro de nav pq será un link -->
-          <picture>
-            <!-- le da mas semántica a la estructura -->
-            <a href="../index.html">
-              <img
-                src="../images/branding/isotype.svg"
-                alt="Isotipo de Funkoshop"
-              />
-            </a>
-          </picture>
-        </nav>
-      </section>
-      <p class="copyright">All rights reserved 2023 - Funkoshop &copy;</p>
-    </footer>
-    <!-- FIN FOOTER -->
+  <!-- INICIO FOOTER -->
+  <footer>
+    <nav class="navbar container">
+      <ul class="navbar__item">
+        <li class="navbar__item">
+          <a class="navbar__link" href="../pages/shop.html">SHOP</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link"  href="../pages/register.html">REGISTRARSE</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link"  href="../pages/login.html">INGRESAR</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="../pages/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+      <!-- logo dentro de nav pq será un link -->
+      <picture>
+        <!-- le da mas semántica a la estructura -->
+        <a href="../index.html">
+          <img
+            src="../images/branding/isotype.svg"
+            alt="Isotipo de Funkoshop"
+          />
+        </a>
+      </picture>
+    </nav>
+  <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+  </footer>
+  <!-- FIN FOOTER -->
   </body>
 </html>
