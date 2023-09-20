@@ -3,7 +3,10 @@
     width: 100%;
     bottom: 0;
 } */
-
+button{
+    border: none;
+    background-color: inherit;
+}
 .main_cart{
    margin-top: var(--spacing-68);
    margin-bottom: var(--spacing-68);
@@ -120,6 +123,11 @@
     background-color: var(--hover-option1);
   } 
 
+  .custom-decrement:active,
+  .custom-increment:active  {
+    background-color: var(--primary-900); 
+    }
+
   .delete_item_svg{
    cursor: pointer;
   }
@@ -127,7 +135,7 @@
   .delete_item_svg:hover path {
     fill: var(--hover-option1) 
   }
-  
+
 
 /* Textos */
 .primary_text{
