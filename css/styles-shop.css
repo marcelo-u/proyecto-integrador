@@ -1,4 +1,4 @@
-@import 'shop.css';
+@import '../css/styles.css';
 
 .shop-section {
     padding-top: var(--spacing-36);

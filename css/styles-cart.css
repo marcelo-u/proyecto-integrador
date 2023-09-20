@@ -1,8 +1,11 @@
+@import '../css/styles.css';
+
 /* .footer_cart{
     position: absolute;
     width: 100%;
     bottom: 0;
 } */
+
 button{
     border: none;
     background-color: inherit;
