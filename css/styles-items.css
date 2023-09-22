@@ -152,19 +152,29 @@ img{width:100% ;}
 
 .producto_content_sell_cant{text-align: center;
 font-size: var(--font-medium);
+height:2.5em
 }
 
-.producto_content_sell_seletion{
-    display: flex;
-flex-direction: column;
-height: 20px
-;}
 
-   .pay_item{
-       color:white;
-    background-color: rgb(85, 85, 85)
-;padding: 6px;
-margin:2px}
+.producto_content_sell_seletion {
+    display: flex;
+    flex-direction: column;
+  }
+  
+   .pay_item {
+    cursor: pointer;
+    font-size: var(--font-medium);
+    text-align: center;
+    background-color: var(--dark-bg-solid);
+    color: var(--light-font-solid);
+    width: 1.1em;
+    height: 1.1em;
+    margin: 1px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: none; 
+  } 
 
 
 .producto_tag{ 
