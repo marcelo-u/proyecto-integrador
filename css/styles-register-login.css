@@ -1,3 +1,10 @@
+/* deja el footer fijo, pero ver como scrolear el contenido entre header y footer */
+
+.footer_register_login {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
 
 .navbar__menu--admin {
     display: flex;
@@ -40,8 +47,12 @@ label {
     row-gap: var(--spacing-16);
 }
 
-.form--grid > label {
+.form--grid > label.form__label-register {
     grid-column: 3 / 7;
+}
+
+.form--grid > label.form__label-login {
+    grid-column: 4 / 7;
 } 
 
 .form--grid > input {
@@ -52,7 +63,6 @@ label {
 } 
 
 .form--grid > input[type="submit"] {
-    grid-column: 3 / 5;
     font-family: var(--base-font);
     font-size: var(--font--xsmall);
     color: var(--light-font-solid);
@@ -60,39 +70,50 @@ label {
    padding: var(--spacing-8) var(--spacing-12);
 } 
 
+.form--grid > input[type="submit"].form__submit-register {
+    grid-column: 3 / 5;
+} 
+
+.form--grid > input[type="submit"].form__submit-login {
+    grid-column: 5 / 7;
+} 
+
 .form--grid > input[type="checkbox"] {
-    grid-column: 5;
     border-radius: 3px;
     border: 2px solid var( --dark-solid);
     /*transform: scale(0.5);*/
     justify-self: end;
 } 
 
-.form--grid .aceptar {
-    grid-column: 6 / 13;
-    font-size: var(--font-xsmall);
-  padding: var(--spacing-8) var(--spacing-12);
+.form--grid > input[type="checkbox"].form__checkbox-register {
+    grid-column: 5;
 } 
 
-.form--grid .aceptar > a {
+.form--grid > input[type="checkbox"].form__checkbox-login {
+    grid-column: 7;
+} 
+
+.form--grid label.aceptar {
+    grid-column: 6 / 13;
+    font-size: var(--font-xsmall);
+    padding: var(--spacing-8);
+} 
+
+.form--grid label.recordarme {
+    grid-column: 8 / 13;
+    font-size: var(--font-xsmall);
+    padding: var(--spacing-8);
+} 
+
+.form--grid label.aceptar > a {
     color: var(--secondary-solid);
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form--grid > a {
+    font-size: var(--font-xsmall);
+    color: var(--secondary-solid);
+    grid-column: 5 / 9;
+} 
 
 
 
