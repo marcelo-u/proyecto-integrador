@@ -1,11 +1,10 @@
-/* deja el footer fijo, pero ver como scrolear el contenido
-    entre header y footer 
+/* deja el footer fijo, pero ver como scrolear el contenido entre header y footer */
+
 .footer_register_login {
     position: absolute;
     width: 100%;
     bottom: 0;
 }
-*/
 
 .navbar__menu--admin {
     display: flex;
