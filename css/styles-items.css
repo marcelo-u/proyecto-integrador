@@ -1,5 +1,18 @@
 /* Item Seleccionado */
 
+.container{ max-width: 1200px;
+    margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+    padding: 0 var(--spacing-128);
+}
+
+
+
+.container header footer { /* clase utilitaria para setear estilos de los contenedores ppales */
+    max-width: 1200px;
+    margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+}
+
+
 .producto{
     display:grid;
     grid-template-areas: "imagenyoda imagenyoda imagenyoda propiedades propiedades";
@@ -99,3 +112,44 @@ height:2.5em
  .main_slider{
     padding-bottom: var(--spacing-68);
  }
+
+ iconify-icon{
+    color:var(--dark-bg-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+.glide__arrow--left{ 
+    left: 0;
+}
+.glide__arrow--right{
+    right: 0;
+}
+
+.slider{display: flex;
+flex-direction: column;
+gap: var(--spacing-36);
+margin: var(--spacing-68) auto;}
+
+.slider__items{display: flex;
+    gap:var(--spacing-24);
+
+}
+
+iconify-icon{
+    color:var(--dark-bg-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+.glide__arrow--left{ 
+    left: 0;
+}
+.glide__arrow--right{
+    right: 0;
+}
+
+.slider__title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-xlarge);
+    text-transform: capitalize;
+}
+
