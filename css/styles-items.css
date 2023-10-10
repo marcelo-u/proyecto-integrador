@@ -94,10 +94,11 @@ height:2.5em
     padding: var(--spacing-12);
     border :none;
     cursor: pointer;
+    transition: background .3s ease-in-out;
  }
 
  .producto_tag:hover{
-    background-color: var(--primary-900);
+    background-color: var(--hover-option1);
  }
 
  .producto_promo{
