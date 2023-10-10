@@ -134,8 +134,6 @@ header{
     max-width: 300px;
 }
 
-
-
 .navbar__menu{display: flex;
 align-items: center;
 gap: var(--spacing-20);
@@ -295,7 +293,7 @@ padding-bottom: var(--spacing-28);}
     text-transform: capitalize;
 }
 
-iconify-icon{
+.iconify-icon-per{
     color:var(--dark-bg-solid);
     font-size: var(--font-small);
     font-weight: 700;
