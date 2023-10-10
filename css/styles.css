@@ -276,16 +276,23 @@ padding-bottom: var(--spacing-28);}
 
 .coletion__link:hover{background-color: var(--primary-900);}
 
-Slider */
+/* Slider */
 
-.slider{display: flex;
-flex-direction: column;
-gap: var(--spacing-36);
-margin: var(--spacing-68) auto;}
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    margin: var(--spacing-68) auto;
+}
 
-.slider__items{display: flex;
-    gap:var(--spacing-24);
+.slider__items {
+    display: flex;
+}
 
+.slider__title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-xlarge);
+    text-transform: capitalize;
 }
 
 iconify-icon{
@@ -293,17 +300,12 @@ iconify-icon{
     font-size: var(--font-small);
     font-weight: 700;
 }
+
 .glide__arrow--left{ 
-    left: 0;
+    left: 130px;
 }
 .glide__arrow--right{
-    right: 0;
-}
-
-.slider__title{
-    font-family: var(--alternative-font);
-    font-size: var(--font-xlarge);
-    text-transform: capitalize;
+    right: 130px;
 }
 
 /* Cards */
