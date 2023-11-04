@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css");
 
 
 /* Variables Normalizadas */
@@ -131,8 +133,6 @@ header{
 .navbar__logo{
     max-width: 300px;
 }
-
-
 
 .navbar__menu{display: flex;
 align-items: center;
@@ -276,20 +276,34 @@ padding-bottom: var(--spacing-28);}
 
 /* Slider */
 
-.slider{display: flex;
-flex-direction: column;
-gap: var(--spacing-36);
-margin: var(--spacing-68) auto;}
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+    margin: var(--spacing-68) auto;
+}
 
-.slider__items{display: flex;
-    gap:var(--spacing-24);
-
+.slider__items {
+    display: flex;
 }
 
 .slider__title{
     font-family: var(--alternative-font);
     font-size: var(--font-xlarge);
     text-transform: capitalize;
+}
+
+.iconify-icon-per{
+    color:var(--dark-bg-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+
+.glide__arrow--left{ 
+    left: 130px;
+}
+.glide__arrow--right{
+    right: 130px;
 }
 
 /* Cards */

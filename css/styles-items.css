@@ -1,5 +1,18 @@
 /* Item Seleccionado */
 
+.container{ max-width: 1200px;
+    margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+    padding: 0 var(--spacing-128);
+}
+
+
+
+.container header footer { /* clase utilitaria para setear estilos de los contenedores ppales */
+    max-width: 1200px;
+    margin: 0 auto; /* top/bottom:0 y left/right: igualados */
+}
+
+
 .producto{
     display:grid;
     grid-template-areas: "imagenyoda imagenyoda imagenyoda propiedades propiedades";
@@ -81,10 +94,11 @@ height:2.5em
     padding: var(--spacing-12);
     border :none;
     cursor: pointer;
+    transition: background .3s ease-in-out;
  }
 
  .producto_tag:hover{
-    background-color: var(--primary-900);
+    background-color: var(--hover-option1);
  }
 
  .producto_promo{
@@ -96,6 +110,3 @@ height:2.5em
     border-bottom:solid var(--secondary-solid) 1px;
  }
 
- .main_slider{
-    padding-bottom: var(--spacing-68);
- }
