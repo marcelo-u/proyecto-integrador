@@ -5,8 +5,9 @@ const quantity=document.querySelector("#campo_numerico");
 add.addEventListener("click",()=>quantity.value=Number(quantity.value)+1);
 
 subtract.addEventListener("click",() => {
-    if (Number(quantity.value) > 0) {
+    if (Number(quantity.value) > 1) {
 (quantity.value=Number(quantity.value)-1);   
     }
 });
 
+quantity.addEventListener('change', () => quantity.value = Number(quantity.value) < 1 ? 1 : Number(quantity.value))
