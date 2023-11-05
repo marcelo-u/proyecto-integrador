@@ -1,19 +1,16 @@
 /* deja el footer fijo, pero ver como scrolear el contenido entre header y footer */
-.footer_register_login {
+
+/* .footer_register_login {
     position: absolute;
     width: 100%;
     bottom: 0;
-}
-
-.navbar__menu--admin {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-24);
-}
+} */
 
 .main {
     text-align: center;
     box-sizing: border-box;
+    position: relative;
+    min-height: 80vh; /* para que en pantallas grandes no quede espacio abajo del footer */
 }
 
 h2,
@@ -43,6 +40,9 @@ label {
     grid-template-columns: repeat(12,1fr);
     padding:  var(--spacing-36) 0;     /* top/bottom y left/right */
     row-gap: var(--spacing-24);
+}
+
+#login--form{
     padding-right: var(--spacing-68);
 }
 
@@ -72,7 +72,7 @@ label {
 } 
 
 .form--grid > input[type="submit"].form__submit-register {
-    grid-column: 2 / 5;
+    grid-column: 2 / 6;
 } 
 
 .form--grid > input[type="submit"].form__submit-login {
@@ -87,7 +87,7 @@ label {
 } 
 
 .form--grid > input[type="checkbox"].form__checkbox-register {
-    grid-column: 5;
+    grid-column: 6;
 } 
 
 .form--grid > input[type="checkbox"].form__checkbox-login {
@@ -95,7 +95,7 @@ label {
 } 
 
 .form--grid label.aceptar {
-    grid-column: 6 / 13;
+    grid-column: 7 / 13;
     font-size: var(--font-small);
     padding: var(--spacing-8);
 } 
@@ -115,6 +115,3 @@ label {
     color: var(--secondary-solid);
     grid-column: 5 / 9;
 } 
-
-
-/* Vista Admin */

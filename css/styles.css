@@ -103,14 +103,16 @@ p {
     padding: 0 var(--spacing-128);
 }
 
-
-
 .container header footer { /* clase utilitaria para setear estilos de los contenedores ppales */
     max-width: 1200px;
     margin: 0 auto; /* top/bottom:0 y left/right: igualados */
 }
 
 img{width:100% ;}
+
+.espacio{
+    min-height: 80vh; /* para que en pantallas grandes no quede espacio abajo del footer */
+}
 
 /* HEADER */
 
@@ -176,16 +178,12 @@ gap: var(--spacing-20);
 }
 .submenu__item:hover{background-color:var(--primary-900);}
 
-.svgcart{
-    transition: filter .1s;
-}
-
-.svgcart:hover {
+/*truco para cambiar de color un svg importado */
+ .svgcart:hover { 
     filter: invert(31%) sepia(73%) saturate(6956%) hue-rotate(334deg) brightness(101%) contrast(105%);
 }
 
 /* Hero */
-
 
 .hero{background-image:url(../images/funkos-banner.webp) ;
 padding: var(--spacing-128) 0;
