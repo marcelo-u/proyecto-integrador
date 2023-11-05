@@ -176,6 +176,14 @@ gap: var(--spacing-20);
 }
 .submenu__item:hover{background-color:var(--primary-900);}
 
+.svgcart{
+    transition: filter .1s;
+}
+
+.svgcart:hover {
+    filter: invert(31%) sepia(73%) saturate(6956%) hue-rotate(334deg) brightness(101%) contrast(105%);
+}
+
 /* Hero */
 
 

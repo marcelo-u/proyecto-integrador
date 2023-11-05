@@ -1,5 +1,4 @@
 /* deja el footer fijo, pero ver como scrolear el contenido entre header y footer */
-
 .footer_register_login {
     position: absolute;
     width: 100%;
@@ -14,6 +13,7 @@
 
 .main {
     text-align: center;
+    box-sizing: border-box;
 }
 
 h2,
@@ -38,17 +38,16 @@ label {
     text-align: left;
 }
     
-.form--grid { 
+.form--grid {    
     display: grid;
-    width: 80rem;
-    margin:auto;
     grid-template-columns: repeat(12,1fr);
-    padding: var(--spacing-36) var(--spacing-128);     /* top/bottom y left/right */
-    row-gap: var(--spacing-16);
+    padding:  var(--spacing-36) 0;     /* top/bottom y left/right */
+    row-gap: var(--spacing-24);
+    padding-right: var(--spacing-68);
 }
 
 .form--grid > label.form__label-register {
-    grid-column: 3 / 7;
+    grid-column: 2 / 7;
 }
 
 .form--grid > label.form__label-login {
@@ -60,18 +59,20 @@ label {
     border: 0;
     border-bottom: 2px solid red;
     font-family: var(--base-font);
+    font-size: var(--font-small);
 } 
 
 .form--grid > input[type="submit"] {
     font-family: var(--base-font);
-    font-size: var(--font--xsmall);
+    font-size: var(--font-small);
     color: var(--light-font-solid);
     background-color: var(--primary-solid);
-   padding: var(--spacing-8) var(--spacing-12);
+    padding: var(--spacing-8) var(--spacing-12);
+    cursor: pointer;
 } 
 
 .form--grid > input[type="submit"].form__submit-register {
-    grid-column: 3 / 5;
+    grid-column: 2 / 5;
 } 
 
 .form--grid > input[type="submit"].form__submit-login {
@@ -95,13 +96,13 @@ label {
 
 .form--grid label.aceptar {
     grid-column: 6 / 13;
-    font-size: var(--font-xsmall);
+    font-size: var(--font-small);
     padding: var(--spacing-8);
 } 
 
 .form--grid label.recordarme {
     grid-column: 8 / 13;
-    font-size: var(--font-xsmall);
+    font-size: var(--font-small);
     padding: var(--spacing-8);
 } 
 
@@ -110,10 +111,10 @@ label {
 } 
 
 .form--grid > a {
-    font-size: var(--font-xsmall);
+    font-size: var(--font-small);
     color: var(--secondary-solid);
     grid-column: 5 / 9;
 } 
 
 
-
+/* Vista Admin */

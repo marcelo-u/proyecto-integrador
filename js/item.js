@@ -1,3 +1,4 @@
+// Funcionalidad botones + y -
 const add=document.querySelector("#add");
 const subtract=document.querySelector("#subtract");
 const quantity=document.querySelector("#campo_numerico");
@@ -10,4 +11,5 @@ subtract.addEventListener("click",() => {
     }
 });
 
+//Evitar que se pongan numeros negativos en el campo
 quantity.addEventListener('change', () => quantity.value = Number(quantity.value) < 1 ? 1 : Number(quantity.value))

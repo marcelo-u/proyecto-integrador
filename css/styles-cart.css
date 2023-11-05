@@ -118,7 +118,8 @@ button{
     display: flex;
     align-items: center; 
     justify-content: center;
-    border: none; 
+    border: none;
+    transition: background .3s ease-in-out; 
   } 
 
   .custom-decrement:hover,
@@ -128,7 +129,8 @@ button{
 
   .custom-decrement:active,
   .custom-increment:active  {
-    background-color: var(--primary-900); 
+    background-color: var(--primary-900);
+    transition: background .3s ease-in-out; 
     }
 
   .delete_item_svg{
@@ -178,7 +180,8 @@ button{
     padding: 10px 20px;
     border: none; 
     border-radius: 5px; 
-    cursor: pointer; 
+    cursor: pointer;
+    transition: background .3s ease-in-out; 
     }
     
 .pay:hover {
