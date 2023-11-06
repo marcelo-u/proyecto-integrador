@@ -98,7 +98,8 @@ p {
     font-size: var(--font-xsmall) /* 18px */
 }
 
-.container{ max-width: 1200px;
+.container{ 
+    max-width: 1200px;
     margin: 0 auto; /* top/bottom:0 y left/right: igualados */
     padding: 0 var(--spacing-128);
 }
@@ -111,7 +112,7 @@ p {
 img{width:100% ;}
 
 .espacio{
-    min-height: 80vh; /* para que en pantallas grandes no quede espacio abajo del footer */
+    min-height: 60vh; /* para que en pantallas grandes no quede espacio abajo del footer */
 }
 
 /* HEADER */

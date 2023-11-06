@@ -4,13 +4,13 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-} */
+}  */
 
 .main {
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    min-height: 80vh; /* para que en pantallas grandes no quede espacio abajo del footer */
+    min-height: 60vh; /* para que en pantallas grandes no quede espacio abajo del footer */
 }
 
 h2,

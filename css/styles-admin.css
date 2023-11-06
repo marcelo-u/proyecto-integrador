@@ -3,3 +3,56 @@
     align-items: center;
     gap: var(--spacing-24);
 }
+
+.admin-image {
+    width: 40px;
+}
+
+#add-image {
+    filter: invert(67%) sepia(86%) saturate(7427%) hue-rotate(341deg) brightness(112%) contrast(112%);
+}
+
+.admin-little-container  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+#admin-search-bar{
+    display: inline-flex;
+}
+
+.admin-search-field {
+    width: 400px;
+    border-radius: 6px ;
+    border: 2px solid #30343F;
+    padding: 5px 10px;
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+    font-weight: 500;
+}
+
+.admin-tittle {
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+    font-weight: 700; 
+    letter-spacing: 0.04em;
+}
+
+.admin-add {
+    display: flex;
+    align-items: center;
+    font-family: var(--base-font);
+    font-size: var(--font-large);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.admin-container-grid {
+    display: grid;
+    grid-template-columns:repeat(12, 1fr) ;
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
+    gap: 20px;     
+}

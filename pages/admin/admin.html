@@ -37,22 +37,43 @@
     </nav>
   </header>
   <!-- FIN  HEADER-->
-  <main class="container espacio">
-    <span>Q</span><input type="search" name="" id="">
-    <h2>LISTADO DE PRODUCTOS</h2> <span>AGREGAR</span><span>+</span>
-    <span>ID</span>
-    <span>Código</span>
-    <span>Nombre del Producto</span>
-    <span>Categoria</span>
 
-    <span>ID</span>
-    <span>Código</span>
-    <span>Nombre del Producto</span>
-    <span>Categoria</span>
-    <span>E</span>
-    <span>B</span>
+  <main class="container espacio">
+    
+    <div id="admin-search-bar" class="admin-little-container">    
+      <img class="admin-image" src="../../images/icons/search_icon.svg" alt="Icono busqueda">
+      <form>
+        <input class="admin-search-field" type="search" name="" id="" placeholder="código, nombre o categoria">
+      </form>
+    </div>
+
+    <div class="admin-little-container ">
+      <h2 class="admin-tittle">LISTADO DE PRODUCTOS</h2> 
+      
+      <a class="admin-add" href="../../pages/admin/create.html">
+        <span>AGREGAR</span>
+        <img id="add-image" class="admin-image" src="../../images/icons/plus-fill.svg" alt=""></img>
+      </a>
+    </div>
+    
+    <div class="admin-container-grid"> 
+      
+      <span>ID</span>
+      <span>Código</span>
+      <span>Nombre del Producto</span>
+      <span>Categoria</span>
+
+      <span>ID</span>
+      <span>Código</span>
+      <span>Nombre del Producto</span>
+      <span>Categoria</span>
+      <span>E</span>
+      <span>B</span>
+    
+    </div>
 
   </main>
+  
   <!-- INICIO FOOTER -->
   <footer>
     <nav class="navbar container">
