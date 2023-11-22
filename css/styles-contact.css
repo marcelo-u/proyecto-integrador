@@ -1,0 +1,75 @@
+@import '../css/styles.css';
+
+
+form {
+    font-family: var(--base-font);
+    min-height: 100vh;
+    align-items:center;
+    justify-content: center;
+    padding: var(--spacing-36);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 20px;
+    text-align:center;
+    
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+ h2 {
+    color:#1F1F1F ;
+    font-size: 3.8em;
+}
+
+label {
+    color: #1F1F1F;
+    font: size 3em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: #e8e9e8;
+    border: 2px solid #747474;
+    color: #1F1F1F;
+    outline: none;
+}
+input::placeholder, textarea::placeholder {
+    color: #747474;
+}
+form_txt {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.form-txt a {
+    color: #ff3333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn {
+    font-size: 16px;
+    color: #ffffff;
+    border: 0;
+    border-radius: 25px;
+    background-color:#747474;
+    box-shadow: 0 0 20px rgba(29, 132, 181, 0.9);
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #ff3333;
+}
+.map {
+    display: center;
+    padding: var(--font-large) ;
+    margin: var(--font-medium);
+  
+}
