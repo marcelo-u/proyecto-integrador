@@ -11,7 +11,7 @@
 
 form {
     min-width: 50%;
-    padding: var(--spacing-24);
+    padding: var(--spacing-20);
     font-family: var(--base-font);
     align-items:center;
     justify-content: center;
