@@ -1,24 +1,21 @@
-const express=require("express");
+const express = require("express");
+const app = express();
 
-const app=express();
-
-// Midlle para poder pasa archivos estaticos al servidor
+// Midle para poder pasa archivos estaticos al servidor (POR AHORA)
 app.use(express.static("public_html"));
+
 // Importacion de routes mainRoute
-const mainRoute=require ("./src/routes/mainRoute");
+const mainRoute = require("./src/routes/mainRoutes");
 // Importacion de routes mainRoute
-const shopRoute=require ("./src/routes/shopRoute");
+const shopRoute = require("./src/routes/shopRoutes"); 
 
-// ruta con nombre de pagina web y no con nombre de documento html
+// Llamado de rutas desde app
+app.use("/", mainRoute);
+app.use("/shop", shopRoute);
 
-app.get("/home",(req,res)=>res.sendFile(__dirname + "/public_html/index.html"));
+// ruta con nombre de pagina web y no con nombre de documento html (POR AHORA)
+app.get("/home", (req,res) => res.sendFile(__dirname + "/public_html/index.html"));
 
-app.get("/ping",(req,res)=>res.send("pong"));
+app.get("/ping", (req,res) => res.send("pong"));
 
-app.listen(4000,()=>console.log("Servidor de BlueLabel funcionando corriendo en http://localhost:4000"));
-
-// Llamado de routas desde app
-
-app.use("/",mainRoute);
-app.use("/shop",shopRoute);
-
+app.listen(4000,() => console.log("Servidor de BlueLabel funcionando en http://localhost:4000"));
