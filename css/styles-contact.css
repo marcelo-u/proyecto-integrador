@@ -1,16 +1,20 @@
 @import '../css/styles.css';
 
-
-form {
-    font-family: var(--base-font);
-    min-height: 100vh;
-    align-items:center;
-    justify-content: center;
-    padding: var(--spacing-36);
+.contact-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     box-shadow: 0 0 20px rgba(0,0,0,.2);
     border-radius: 20px;
-    text-align:center;
-    
+    margin: var(--spacing-24) 0;
+}
+
+form {
+    min-width: 50%;
+    padding: var(--spacing-24);
+    font-family: var(--base-font);
+    align-items:center;
+    justify-content: center;
 }
 
 .input-group {
@@ -20,21 +24,28 @@ form {
 }
 
  h2 {
+    text-align: center;
     color:#1F1F1F ;
-    font-size: 3.8em;
+    font-size: var(--font-xlarge);
+    margin-bottom: var(--spacing-16);
 }
 
 label {
     color: #1F1F1F;
-    font: size 3em;
+    font-size: var(--font-medium);
+    font-family: var(--base-font);
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+
 }
 
 input, textarea {
-    padding: 15px 30px;
-    border-radius: 20px;
-    margin-bottom: 25px;
+    font-family: var(--alternative-font);
+    font-size: var(--font-small);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
     background-color: #e8e9e8;
     border: 2px solid #747474;
     color: #1F1F1F;
@@ -43,7 +54,8 @@ input, textarea {
 input::placeholder, textarea::placeholder {
     color: #747474;
 }
-form_txt {
+
+.form_txt {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
@@ -59,17 +71,34 @@ form_txt {
     font-size: 16px;
     color: #ffffff;
     border: 0;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color:#747474;
     box-shadow: 0 0 20px rgba(29, 132, 181, 0.9);
     cursor: pointer;
+    transition: background .3s ease-in-out;
 }
 .btn:hover {
-    background-color: #ff3333;
+    background-color: var(--hover-option1);
 }
+
+.contact-aside{
+    width: 100%;
+    padding: var(--spacing-16) 0;
+}
+
 .map {
-    display: center;
-    padding: var(--font-large) ;
-    margin: var(--font-medium);
-  
+    margin: var(--spacing-36) var(--spacing-24);
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+
+.redes-container{
+    margin-top: var(--spacing-36);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-24);
+}
+
+.redes{
+    width: 50px;
+    cursor: pointer;
 }
