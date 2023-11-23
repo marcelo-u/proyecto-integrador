@@ -132,11 +132,16 @@ margin-top: 30px;
     font-weight: 600;
     line-height: 17px;
     letter-spacing: 0em;
-    background: #FF3333;
+    background-color: var(--primary-solid);
     color:  #FFFFFF;
     border: none;
     margin-right: 35px;
     cursor: pointer;
+    transition: background .3s ease-in-out; 
+}
+
+.boton:hover{
+    background-color: var(--hover-option1);
 }
 
 .elegir_archivos{

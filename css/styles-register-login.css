@@ -70,7 +70,13 @@ label {
     background-color: var(--primary-solid);
     padding: var(--spacing-8) var(--spacing-12);
     cursor: pointer;
+    transition: background .3s ease-in-out; 
 } 
+
+.form--grid > input[type="submit"]:hover{
+    background-color: var(--hover-option1);
+}
+
 
 .form--grid > input[type="submit"].form__submit-register {
     grid-column: 2 / 6;
