@@ -84,6 +84,10 @@ html { /* todos los estilos heredables pasan a los hijos y como es la etiqueta r
     color: var(--dark-solid);
 }
 
+main{
+    min-height: 60vh;
+}
+
 a {
     text-decoration: none; /* quita subrayado */
     font-family: inherit; /* Raleway o Inter, según el caso */
@@ -378,6 +382,38 @@ footer {
     text-align: center;
     margin-top: var(--spacing-36);
 }
+
+/* 404 Page */
+.pagenotfound{
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-28) var(--spacing-128);
+    gap: var(--spacing-28);
+}
+
+.dorothy{
+   max-width: 400px;  
+}
+
+.title-404{
+    font-size: var(--font-jumbo);
+    font-weight: 700;
+}
+
+#num-404{
+    font-size: 250px;
+}
+
+#frase-404{
+    margin-top: var(--spacing-68);
+    font-size: var(--font-large);
+}
+
+#footer_404 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+} 
 
 /* EStilos con nomenclatura de Marcelo */
 /*  
