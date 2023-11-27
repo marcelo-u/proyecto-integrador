@@ -2,19 +2,24 @@ const express = require("express");
 const app = express();
 
 // Midle para poder pasa archivos estaticos al servidor (POR AHORA)
-app.use(express.static("public_html"));
+app.use(express.static("public"));
 
 // Importacion de routes mainRoute
-const mainRoute = require("./src/routes/mainRoutes");
+const mainRoutes = require("./src/routes/mainRoutes");
 // Importacion de routes mainRoute
-const shopRoute = require("./src/routes/shopRoutes"); 
+const shopRoutes = require("./src/routes/shopRoutes"); 
 
-// Llamado de rutas desde app
-app.use("/", mainRoute);
-app.use("/shop", shopRoute);
+// Middle llamado de rutas desde app
+app.use("/", mainRoutes);
+app.use("/shop", shopRoutes);
 
-// ruta con nombre de pagina web y no con nombre de documento html (POR AHORA)
-app.get("/home", (req,res) => res.sendFile(__dirname + "/public_html/index.html"));
+// Ruta con nombre de pagina web y no con nombre de documento html (POR AHORA)
+app.get("/home", (req,res) => res.sendFile(__dirname + "/public/index.html"));
+
+// Manejo de error 404
+app.use((req, res) => (
+    res.status(404).sendFile(__dirname + "/public/pages/404.html")
+))
 
 app.get("/ping", (req,res) => res.send("pong"));
 

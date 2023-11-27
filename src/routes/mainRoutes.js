@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mainControlers = require("../../controler/mainControler");
+const mainControlers = require("../../controllers/mainControler");
 
 router.get("/home", mainControlers.home);
 router.get("/contact", mainControlers.contact);
