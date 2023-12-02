@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-require('dotenv').config()
 
 // Importacion de routes mainRoute
 const mainRoutes = require("./src/routes/mainRoutes");
@@ -27,4 +26,4 @@ app.use((req, res) => (
 
 app.get("/ping", (req,res) => res.send("pong"));
 
-app.listen(process.env.PORT ,() => console.log("Servidor de BlueLabel funcionando en http://localhost:4000"));
+app.listen(4000 ,() => console.log('Servidor de BlueLabel funcionandoen http://localhost:4000'));
