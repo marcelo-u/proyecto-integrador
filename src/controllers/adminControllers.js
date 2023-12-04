@@ -5,13 +5,22 @@ const adminControllers = {
     createGET: (req, res) => { res.send("Ruta para vista Create")},
     editGET: (req, res) => { res.send("Ruta para vista Edit con ID")},
 
-    createPOST: (req, res) => {res.send("VERBO:POST Ruta para crear un item nuevo")},
+    createPOST: async (req, res) => { 
+        const data = req.body
+        const result = await addItem(data);
+        res.send(result);
+    },
     
-    editPUT: (req, res) => {res.send("VERBO:PUT Ruta para editar un item")},
+    editPUT: async (req, res) => { 
+        const id = req.params.id
+        const data = req.body
+        const result = await editItem({product_id: id}, data);
+        res.send(result);
+    },
     
     editDELETE: async (req, res) => { 
         const id = req.params.id
-        const result = await deleteItem(id);
+        const result = await deleteItem({product_id: id});
         res.send(result); 
     },
 };
