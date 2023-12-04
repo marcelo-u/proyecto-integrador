@@ -1,20 +1,23 @@
-const {getAll, getOne} = require("../models/items")
+const {getAll, getOne} = require("../models/itemsModels")
 
-const shopControlers = {
+const shopControllers = {
     
-    shop: async (req, res) => { 
+    shopGET: async (req, res) => { 
         const items = await getAll();
-        res.send(items); 
+        res.send(items);
     },
 
-    item: async (req, res) => { 
+    itemGET: async (req, res) => { 
         const id = req.params.id
-        const item = await getOne(id);
+        const item = await getOne({product_id: id});
         res.send(item); 
     },
 
-    
-    cart: (req, res) => { res.send("Ruta para vista Cart"); }
+    cartGET: (req, res) => { res.send("Ruta para vista Cart"); },
+
+    itemPOST: (req, res) => { res.send("VERBO:POST Ruta para agregar el item actual al carrito"); },
+
+    cartPOST: (req, res) => { res.send("VERBO:POST Ruta para hacer la compra"); },
 };
   
-module.exports = shopControlers;
+module.exports = shopControllers;
