@@ -1,0 +1,68 @@
+<%- include("partials/header"); -%>
+
+<main>
+    <section class="hero">
+    <!-- BANNER -->
+        <!-- la imagen de fondo se puede agregar como background con CSS -->
+        <article class="hero__content container">
+            <div >
+            <h3  class="hero__title "> Nuevos Ingresos</h3>
+            <p  class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+            </div>
+        <a  class="hero__link" href="/shop">SHOP</a>
+        </article>
+
+    </section>
+
+    <!-- COLECCIONES -->
+    <section class="coletion container">
+        <!-- box modeling (modelo de caja) -->
+        <article class="coletion__content">
+        <h3 class="coletion__title">Star Wars & The Mandalorian</h3>
+        <p class="coletion__text">
+            Disfrutá de una saga que sigue agregando personajes a su colección.
+        </p>
+        <a class="coletion__link" href="shop">VER COLECCIÓN</a>
+        </article>
+        <picture class="coletion__cover">
+        <img src="/images/star-wars/baby-yoda-1.webp" alt="baby yoda" />
+        </picture>
+    </section>
+
+    <section class="coletion container">
+        <article class="coletion__content">
+        <h3 class="coletion__title">Pokémon</h3>
+        <p class="coletion__text">
+            Atrapa todos los que puedas y disfruta de una colección llena de
+            amigos.
+        </p>
+        <a class="coletion__link" href="/shop">VER COLECCIÓN</a>
+        </article>
+        <picture class="coletion__cover">
+        <img
+            src="/images/pokemon/vulpix-1.webp"
+            alt="pokemon vulpix funko"
+        />
+        </picture>
+    </section>
+
+    <section class="coletion container">
+        <article class="coletion__content">
+        <h3 class="coletion__title">Harry Potter</h3>
+        <p class="coletion__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
+        <a class="coletion__link" href="/shop">VER COLECCIÓN</a>
+        </article>
+        <picture class="coletion__cover">
+        <img
+            src="/images/harry-potter/snape-patronus-1.webp"
+            alt="Patronus de Snape de la saga Harry Potter"
+        />
+        </picture>
+    </section>
+
+    <%- include("partials/latestReleases"); -%>
+
+</main>
+
+<%- include("partials/footer"); -%>
+

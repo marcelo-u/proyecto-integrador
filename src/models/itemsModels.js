@@ -40,7 +40,6 @@ const addItem = async (data) => {
             data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id]);
         return `Se ha agregado correctamente el Item`
     } catch (error) {
-        
         return errorDBhandler(error);
     } finally {
         conn.releaseConnection();

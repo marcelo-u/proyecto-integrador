@@ -1,6 +1,6 @@
 const mainControllers = {
-    home: (req, res) => { res.send("Ruta para vista Home")}, 
-    contact: (req, res) => { res.send("Ruta para vista Contact")},
+    home: (req, res) => { res.render("home")}, 
+    contact: (req, res) => { res.render("contact")},
     about: (req, res) => { res.send("Ruta para vista About")},
     faqs: (req, res) => { res.send("Ruta para vista Faqs")},
 };

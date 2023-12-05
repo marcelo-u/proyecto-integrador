@@ -4,16 +4,16 @@ const shopControllers = {
     
     shopGET: async (req, res) => { 
         const items = await getAll();
-        res.send(items);
+        res.render("shop/shop", {items});
     },
 
     itemGET: async (req, res) => { 
         const id = req.params.id
         const item = await getOne({product_id: id});
-        res.send(item); 
+        res.render("shop/item", {item});
     },
 
-    cartGET: (req, res) => { res.send("Ruta para vista Cart"); },
+    cartGET: (req, res) => { res.render("shop/cart")},
 
     itemPOST: (req, res) => { res.send("VERBO:POST Ruta para agregar el item actual al carrito"); },
 
