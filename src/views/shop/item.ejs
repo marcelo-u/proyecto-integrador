@@ -1,4 +1,4 @@
-<%- include("../partials/header"); -%>
+<%- include("../partials/header" , { userADMIN: false }); -%>
 
 <main>
     <section class="producto container">
@@ -29,7 +29,7 @@
       </picture>
     </section>
 
-    <%- include("../partials/latestReleases"); -%>
+    <%- include("../partials/latestReleasesSlider"); -%>
        
   </main>
 
