@@ -1,4 +1,6 @@
 @import '../css/styles.css';
+@import '../css/styles-admin.css';
+
 /* deja el footer fijo, pero ver como scrolear el contenido entre header y footer */
 
 /* .footer_register_login {
@@ -34,6 +36,8 @@ label {
     font-family: var(--base-font);
     font-size: var(--font-medium);
     text-align: left;
+    font-weight: 600;
+    align-self: center;
 }
     
 .form--grid {    
@@ -48,15 +52,15 @@ label {
 }
 
 .form--grid > label.form__label-register {
-    grid-column: 2 / 7;
+    grid-column: 2 / 6;
 }
 
 .form--grid > label.form__label-login {
-    grid-column: 4 / 7;
+    grid-column: 4 / 6;
 } 
 
 .form--grid > input {
-    grid-column: 7 / 11;
+    grid-column: 6 / 11;
     border: 0;
     border-bottom: 2px solid red;
     font-family: var(--base-font);
@@ -122,3 +126,12 @@ label {
     color: var(--secondary-solid);
     grid-column: 5 / 9;
 } 
+
+input, textarea {
+    font-family: var(--alternative-font);
+    font-size: var(--font-small);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #e8e9e8;
+}

@@ -9,7 +9,7 @@ const shopControllers = {
 
     itemGET: async (req, res) => { 
         const id = req.params.id
-        const item = await getOne({product_id: id});
+        const [item] = await getOne({product_id: id}); // Desestructuro, ya que sino hay que acceder a las propiedades por posicion [0] del array
         res.render("shop/item", {item});
     },
 
