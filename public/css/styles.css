@@ -251,7 +251,12 @@ z-index: 2;}
 
 }
  /* Trucazo de hijos para invertir el sentido */
- .coletion:nth-child(3) .coletion__cover{order:-1;}
+ /* .coletion:nth-child(3) .coletion__cover{order:-1;} */
+
+ /* Se cambio a una clase, para que se agregue dinamicamente si hay que cargar mas licencias */
+.par {
+    order: -1;
+}
 
 .coletion__content{
     display: flex;
