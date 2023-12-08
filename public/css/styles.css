@@ -247,7 +247,7 @@ z-index: 2;}
     display:grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    padding: var(--spacing-16) var(--spacing-128);
+    padding: 0 var(--spacing-128);
 
 }
  /* Trucazo de hijos para invertir el sentido */
@@ -269,6 +269,7 @@ z-index: 2;}
     font-family: var(--alternative-font);
     font-size: var(--font-display);
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .coletion__text{  font-family: var(--alternative-font);
@@ -333,10 +334,12 @@ padding-bottom: var(--spacing-28);}
 .card-item__license{
     font-size: (--font-xsmall) ;
     font-weight:500 ;
+    text-transform: uppercase;
 }
 .card-item__name{
     font-size: var(--font-small);
     font-weight:700 ;
+    text-transform: uppercase;
 }
 .card-item__price{
     font-size: var(--font-xsmall) ;

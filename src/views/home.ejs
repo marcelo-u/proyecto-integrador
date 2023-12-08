@@ -15,52 +15,26 @@
     </section>
 
     <!-- COLECCIONES -->
+
+    <% licences.forEach( lic => { %>
+        
     <section class="coletion container">
         <!-- box modeling (modelo de caja) -->
         <article class="coletion__content">
-        <h3 class="coletion__title">Star Wars & The Mandalorian</h3>
+        <h3 class="coletion__title"><%= lic.licence_name %></h3>
         <p class="coletion__text">
-            Disfrutá de una saga que sigue agregando personajes a su colección.
-        </p>
-        <a class="coletion__link" href="shop">VER COLECCIÓN</a>
-        </article>
-        <picture class="coletion__cover">
-        <img src="/images/star-wars/baby-yoda-1.webp" alt="baby yoda" />
-        </picture>
-    </section>
-
-    <section class="coletion container">
-        <article class="coletion__content">
-        <h3 class="coletion__title">Pokémon</h3>
-        <p class="coletion__text">
-            Atrapa todos los que puedas y disfruta de una colección llena de
-            amigos.
+            <%= lic.licence_description %>
         </p>
         <a class="coletion__link" href="/shop">VER COLECCIÓN</a>
         </article>
         <picture class="coletion__cover">
-        <img
-            src="/images/pokemon/vulpix-1.webp"
-            alt="pokemon vulpix funko"
-        />
+        <img src="/images/<%= lic.licence_image %>" alt="Imagen de la licencia <%= lic.licence_name %>" />
         </picture>
     </section>
 
-    <section class="coletion container">
-        <article class="coletion__content">
-        <h3 class="coletion__title">Harry Potter</h3>
-        <p class="coletion__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
-        <a class="coletion__link" href="/shop">VER COLECCIÓN</a>
-        </article>
-        <picture class="coletion__cover">
-        <img
-            src="/images/harry-potter/snape-patronus-1.webp"
-            alt="Patronus de Snape de la saga Harry Potter"
-        />
-        </picture>
-    </section>
+    <% }); %>
 
-    <%- include("partials/latestReleasesSlider"); -%>
+    <%- include("partials/slider",{ items, sliderTitle: "ULTIMOS LANZAMIENTOS"} ); -%>
 
 </main>
 

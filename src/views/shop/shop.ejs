@@ -1,5 +1,6 @@
 <%- include("../partials/header" , { userADMIN: false, pageTittle: "Shop", css : "/css/styles-shop.css" }); -%>
 
+<!-- CONTROLES Y FILTROS -->
 <div class="shop-section container">
     <section class="filter">
       <div class="filters__opt">
@@ -80,60 +81,37 @@
       </div>
     </section>
 
+    <!-- ITEMS -->
     <main class="items">
       <ul class="list-items">
-        <!-- se usa ul/li en vez de div porque tiene sentido semantico: c/elemento forma parte del carrucel-->
 
-        <% items.forEach(item => {  %>
-
-        <li>
-          <article class="card-item">
-            <a class="card-item__link" href="shop/item/<%= item.product_id %>">
-              <picture class="card-item__cover"
-                ><span class="card-item_tag">Nuevo</span>
-                <img
-                  class="card-item__ima-front"
-                  src="/images/<%= item.image_front %>"
-                  alt=" Figura <%= item.product_name %>"
-                />
-                <img
-                  class="card-item__ima-end"
-                  src="/images/<%= item.image_back %>"
-                  alt=" Figura <%= item.product_name %>"
-                />
-              </picture>
-              <div class="card-item__content">
-                <p class="card-item__license"><%= item.licence_name %></p>
-                <h4 class="card-item__name"><%= item.product_name %></h4>
-                <p class="card-item__price">$ <%= item.price %></p>
-                <p class="card-item__promo"><%= item.dues %> CUOTAS SIN INTERÉS</p>
-              </div>
-            </a>
-          </article>
-        </li>
+        <% items.forEach(item => { %>
+          
+          <!-- CARD -->
+          <%- include("../partials/card", { item }); -%> 
         
-        <% });  %>
+        <% }); %>
 
       </ul>
     
 
       <!-- PAGINADO -->
       <lu class="pages">
-        <li class="pages__opt">
-          <a href="#"
-            ><iconify-icon icon="mdi:chevron-left"></iconify-icon
-          ></a>
-        </li>
-        <li class="pages__opt"><a href="">1</a></li>
-        <li class="pages__opt"><a href="">2</a></li>
-        <li class="pages__opt"><a href="">...</a></li>
-        <li class="pages__opt"><a href="">9</a></li>
-        <li class="pages__opt"><a href="">10</a></li>
-        <li class="pages__opt">
-          <a href=""
-            ><iconify-icon icon="mdi:chevron-right"></iconify-icon
-          ></a>
-        </li>
+        <a href="">
+          <li class="pages__opt">
+            <iconify-icon icon="mdi:chevron-left"></iconify-icon>
+          </li>
+        </a>
+        <a href=""> <li class="pages__opt">1</li> </a>
+        <a href=""> <li class="pages__opt">2</li></a>
+        <a href=""><li class="pages__opt">...</li></a>
+        <a href=""><li class="pages__opt">9</li></a>
+        <a href=""><li class="pages__opt">10</li></a>
+        <a href="">
+          <li class="pages__opt">
+            <iconify-icon icon="mdi:chevron-right"></iconify-icon>
+          </li>
+        </a>
       </lu>
     </main>
 </div>

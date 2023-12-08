@@ -1,4 +1,4 @@
-// Este codigo agrega la clase impar para dar el efecto invertido en las licencias de /home
+// Este codigo agrega la clase impar para dar el efecto invertido en las licencias de / home
 document.addEventListener("DOMContentLoaded", function() {
     var divs = document.querySelectorAll('.coletion .coletion__cover');
   

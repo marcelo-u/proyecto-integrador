@@ -12,10 +12,32 @@ const getAll = async () => {
     }
 };
 
+const getFiltered = async (object) => {
+    try {
+        const [rows] = await conn.query(`SELECT * FROM product WHERE ?`, object);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};
+
+const getLicences = async () => {
+    try {
+        const [rows] = await conn.query(`SELECT * FROM licence;;`);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};   
+
 // Esta función chequea si existe el item antes de seguir con lo demas, es un getOne abreviado para ser reutilizado
 const CheckExistence = async (object) => {
     const [itemExistence] = await conn.query(`SELECT * FROM product JOIN licence
-ON product.licence_id = licence.licence_id WHERE ?;`, object);
+        ON product.licence_id = licence.licence_id WHERE ?;`, object);
     if (itemExistence.length === 0) {
         throw new Error(`No se encontró el ítem con el ID ${object.product_id}`);
     } 
@@ -24,7 +46,7 @@ ON product.licence_id = licence.licence_id WHERE ?;`, object);
 
 const getOne = async (object) => {
     try {
-        const item = await CheckExistence(object);
+        const [item] = await CheckExistence(object);
         return item
     } catch (error) {
         return errorDBhandler(error);
@@ -76,6 +98,8 @@ const deleteItem = async (object) => {
 
 module.exports = {
     getAll,
+    getFiltered,
+    getLicences,
     getOne,
     addItem,
     editItem,
