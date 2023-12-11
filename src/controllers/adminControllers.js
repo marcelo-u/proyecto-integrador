@@ -1,9 +1,9 @@
 const {addItem, editItem, deleteItem} = require("../models/itemsModels")
 
 const adminControllers = {
-    adminGET: (req, res) => { res.send("Ruta para vista Admin")}, 
-    createGET: (req, res) => { res.send("Ruta para vista Create")},
-    editGET: (req, res) => { res.send("Ruta para vista Edit con ID")},
+    adminGET: (req, res) => { res.render("admin/admin")}, 
+    createGET: (req, res) => { res.render("admin/create")},
+    editGET: (req, res) => { res.render("admin/edit")},
 
     createPOST: async (req, res) => { 
         const data = req.body

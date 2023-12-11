@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 require('dotenv').config();
 
 // Importacion Error 404
@@ -16,11 +15,15 @@ const authRoutes = require("./src/routes/authRoutes");
 app.use(express.urlencoded());
 app.use(express.json());
 
-// Middle para poder pasa archivos estaticos al servidor (POR AHORA)
+// Middle para poder pasa archivos estaticos al servidor
 app.use(express.static("public"));
 
+// Motor de plantillas EJS
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
+
 // Ruta con nombre de pagina web y no con nombre de documento html (POR AHORA)
-app.get("/home", (req,res) => res.sendFile(__dirname + "/public/index.html"));
+// app.get("/home", (req,res) => res.sendFile(__dirname + "/public/index.html"));
 
 // Middle llamado de rutas desde app
 app.use("/", mainRoutes);

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href= <%= css  %> />
+
+    <title> <%= pageTittle  %> | Funkoshop</title>
+  </head>
+  <body>
+    <!-- INICIO HEADER-->
+    <header>
+      <nav class="navbar container">
+        <!-- logo dentro de nav pq será un link -->
+        <picture class="navbar__logo">
+          <!-- le da mas semántica a la estructura -->
+          <a href="/">
+            <img
+              src="/images/branding/logo_light_horizontal.svg"
+              alt="Isologo de Funkoshop"
+            />
+          </a>
+        </picture>
+
+        <% if (userADMIN) { %>
+            <%- include("../partials/adminNavbar"); -%>
+          <%} else { %>
+            <%- include("../partials/defaultNavbar"); -%>
+        <% } %>
+       
+      </nav>
+    </header>
+    <!-- FIN  HEADER-->

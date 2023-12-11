@@ -3,7 +3,12 @@ const errorDBhandler = require("../utils/errorHandler")
 
 const getAll = async () => {
     try {
-        const [rows] = await conn.query("SELECT * FROM product;");
+        const [rows] = await conn.query(`SELECT * 
+            FROM product 
+            JOIN licence 
+            ON product.licence_id = licence.licence_id
+            JOIN category
+            on product.category_id = category.category_id;`);
         return rows
     } catch (error) {
         return errorDBhandler(error);
@@ -12,18 +17,44 @@ const getAll = async () => {
     }
 };
 
+const getFiltered = async (object) => {
+    try {
+        const [rows] = await conn.query(`SELECT * FROM product WHERE ?`, object);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};
+
+const getLicences = async () => {
+    try {
+        const [rows] = await conn.query(`SELECT * FROM licence;;`);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};   
+
 // Esta función chequea si existe el item antes de seguir con lo demas, es un getOne abreviado para ser reutilizado
 const CheckExistence = async (object) => {
-    const [itemExistence] = await conn.query("SELECT * FROM product WHERE ?;", object);
+    const [itemExistence] = await conn.query(`SELECT * 
+        FROM product 
+        JOIN licence
+        ON product.licence_id = licence.licence_id 
+        WHERE ?;`, object);
     if (itemExistence.length === 0) {
         throw new Error(`No se encontró el ítem con el ID ${object.product_id}`);
     } 
-    return itemExistence
+    return itemExistence 
 };
 
 const getOne = async (object) => {
     try {
-        const item = await CheckExistence(object);
+        const [item] = await CheckExistence(object);
         return item
     } catch (error) {
         return errorDBhandler(error);
@@ -40,7 +71,6 @@ const addItem = async (data) => {
             data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id]);
         return `Se ha agregado correctamente el Item`
     } catch (error) {
-        
         return errorDBhandler(error);
     } finally {
         conn.releaseConnection();
@@ -76,6 +106,8 @@ const deleteItem = async (object) => {
 
 module.exports = {
     getAll,
+    getFiltered,
+    getLicences,
     getOne,
     addItem,
     editItem,

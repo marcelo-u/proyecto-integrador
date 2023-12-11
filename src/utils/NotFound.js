@@ -1,7 +1,7 @@
 const path = require("path")
 
 const NotFound = ((req, res) => (
-    res.status(404).sendFile(path.resolve(__dirname, "../../public/pages/404.html"))
+    res.status(404).render("404")
 ));
 
 module.exports = NotFound
