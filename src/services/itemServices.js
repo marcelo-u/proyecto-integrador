@@ -3,7 +3,7 @@ const {getAll, getFiltered} = require("../models/itemsModels")
 const getNews = async () => {
     const items = await getAll();
     let itemsNews = [];
-    items.forEach(item => {
+    items.forEach( item => {
         let fecha_creacion = new Date(item.create_time);
         let fecha_actual = new Date();
 
