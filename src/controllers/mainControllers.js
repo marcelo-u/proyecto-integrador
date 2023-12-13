@@ -1,5 +1,5 @@
-const {getLicences} = require("../models/itemsModels")
-const {getNews} = require("../services/itemServices")
+const {getLicences} = require("../models/itemsModels");
+const {getNews} = require("../services/itemServices");
 
 const mainControllers = {
     

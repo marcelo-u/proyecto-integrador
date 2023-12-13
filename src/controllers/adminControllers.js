@@ -1,4 +1,4 @@
-const {addItem, editItem, deleteItem} = require("../models/itemsModels")
+const {addItem, editItem, deleteItem} = require("../models/itemsModels");
 
 const adminControllers = {
     adminGET: (req, res) => { res.render("admin/admin")}, 
