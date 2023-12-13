@@ -209,3 +209,34 @@ margin-bottom: var(--spacing-28);
     border-top: 2px solid #FF3333;
     font-weight: 700;
 }
+
+/* Carro vacío */
+.empty_cart{
+    display: flex;
+    justify-content: center;
+}
+
+.empty_cart_tittle{
+    text-align: center;
+    font: var(--alternative-font);
+    font-weight: 700;
+    font-size: var(--font-xlarge);
+    border-bottom: 3px solid var(--primary-solid);
+    padding: 8px 0px 8px 0px;
+}
+
+.empty_cart_img{
+    max-width: 500px;
+    justify-content: center;
+    border-bottom: 3px solid var(--primary-solid);
+}
+
+.empty_cart_shop_link {
+    display: flex;
+    justify-content: center;
+    transition: color 0.2s linear 0.2s 
+}
+
+.empty_cart_shop_link:hover {
+    color: var(--hover-option1);
+}

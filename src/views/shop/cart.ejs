@@ -1,7 +1,7 @@
 <%- include("../partials/header" , { userADMIN: false, pageTittle: "Cart", css : "/css/styles-cart.css" }); -%>
 
 <main class="main_cart container">
-    
+    <% if (items.length > 0){ %>
     <!-- CARRITO DE COMPRAS -->
     <section>
       <h1 class="cart_tittle" id="titulo_carritodecompras">CARRITO DE COMPRAS</h1>
@@ -51,20 +51,40 @@
 
       <% }); %>
     </div>
-    
-    <!-- RESUMEN -->
+
+    <!-- RESUMEN -->    
+    <%
+    let cantidad_items = 0
+    let subtotal = 0
+
+    items.forEach(item => {
+      cantidad_items += Number(item.cart_quantity)
+      subtotal += item.cart_quantity * item.price
+    }); 
+    %>
     <section class="resume">
       <h1 class="cart_tittle" id="resume_tittle">RESUMEN</h1>
       <div class="rad_shad_container">
-        <div class="primary_text">CANTIDAD DE ELEMENTOS<span class="secondary_text">3</span></div>
-        <div class="primary_text">SUBTOTAL<span class="secondary_text">$5.399,97</span></div>
+        <div class="primary_text">CANTIDAD DE ELEMENTOS<span id="cantidad_items" class="secondary_text"><%= cantidad_items %></span></div>
+        <div class="primary_text">SUBTOTAL<span id="subtotal_text" class="secondary_text">$<%= subtotal.toFixed(2) %></span></div>
         <div class="primary_text">ENVIO<span class="secondary_text">$0,00</span></div>
-        <div class="primary_text" id="total">TOTAL<span class="secondary_text">$5.399,97</span></div>
+        <div class="primary_text" id="total">TOTAL<span id="total_text" class="secondary_text">$<%= subtotal.toFixed(2) %></span></div>
       </div>
       <button class="pay">IR A PAGAR</button>    
     </section>
-  
+ 
+    <% } else { %>
+      <h1 class="empty_cart_tittle">OH, CUANTO VACÍO</h1>
+      <div class="empty_cart">
+        
+        <img class="empty_cart_img" src="/images/varios/shopping-cart.jpg" alt="Carrito vacío">
+      </div>
+      <div class="empty_cart_shop_link"><a class="empty_cart_tittle"  href="/shop">IR A COMPRAR</a></div>
+    <% }; %>
+
+
 </main>
+
 
 <%- include("../partials/footer"); -%>
 

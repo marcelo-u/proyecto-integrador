@@ -12,8 +12,9 @@ const shopControllers = {
     itemGET: async (req, res) => { 
         const id = req.params.id
         const item = await getOne({product_id: id}); // Desestructuro, ya que sino hay que acceder a las propiedades por posicion [0] del array
-        const items = await getRelated({licence_id: item.licence_id}); 
-        res.render("shop/item", {items, item});
+        const items = await getRelated({licence_id: item.licence_id});
+        const carrito = await getCart()
+        res.render("shop/item", {items, item, carrito});
     },
 
     itemPOST: async (req, res) => {
