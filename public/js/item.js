@@ -1,13 +1,13 @@
 // Funcionalidad botones + y -
-const add=document.querySelector("#add");
-const subtract=document.querySelector("#subtract");
-const quantity=document.querySelector("#campo_numerico");
+const add = document.querySelector("#add");
+const subtract = document.querySelector("#subtract");
+const quantity = document.querySelector("#campo_numerico");
 
-add.addEventListener("click",()=>quantity.value=Number(quantity.value)+1);
+add.addEventListener("click", () => quantity.value = Number(quantity.value) + 1);
 
-subtract.addEventListener("click",() => {
+subtract.addEventListener("click", () => {
     if (Number(quantity.value) > 1) {
-(quantity.value=Number(quantity.value)-1);   
+(quantity.value=Number(quantity.value) - 1);   
     }
 });
 
