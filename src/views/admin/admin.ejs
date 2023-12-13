@@ -23,23 +23,17 @@
       <span class="admin-id">ID</span>
       <span class="admin-code">Código</span>
       <span class="admin-name">Nombre del Producto</span>
-      <span class="admin-cat">Categoria</span>
+      <span class="admin-cat">Licencia</span>
       
       <!-- ITEMS -->
-      <span class="admin-id admin-item">1</span>
-      <span class="admin-code admin-item">STW001001</span>
-      <span class="admin-name admin-item">Baby Yoda Blueball </span>
-      <span class="admin-cat admin-item">STAR WARS</span>
-      <a class="admin-image admin-item-edit" href="/admin/edit/1"><img class="admin-image admin-item-edit" src="/images/icons/edit_pencil.svg" alt="Editar"></a>
-      <a class="admin-image admin-item-delete" href="/admin/delete/1"><img  src="/images/icons/delete_trash.svg" alt="Borrar"></a>
-
-      <span class="admin-id admin-item">10</span>
-      <span class="admin-code admin-item">HPT001001</span>
-      <span class="admin-name admin-item">Harry Potter & Hegwid</span>
-      <span class="admin-cat admin-item">HARRY POTTER</span>
-      <a class="admin-image admin-item-edit" href="/admin/edit/2"><img class="admin-image admin-item-edit" src="/images/icons/edit_pencil.svg" alt="Editar"></a>
-      <a class="admin-image admin-item-delete" href="/admin/delete/10"><img  src="/images/icons/delete_trash.svg" alt="Borrar"></a>
-      
+      <% items.forEach(item => { %>
+        <span class="admin-id admin-item"><%= item.product_id %></span>
+        <span class="admin-code admin-item"><%= item.sku %></span>
+        <span class="admin-name admin-item"><%= item.product_name %></span>
+        <span class="admin-cat admin-item"><%= item.licence_name %></span>
+        <a class="admin-image admin-item-edit" href="/admin/edit/<%= item.product_id %>"><img class="admin-image admin-item-edit" src="/images/icons/edit_pencil.svg" alt="Editar"></a>
+        <a class="admin-image admin-item-delete" href="/admin/delete/<%= item.product_id %>"><img  src="/images/icons/delete_trash.svg" alt="Borrar"></a>
+      <% }); %>
     </div>
 
 </main>
