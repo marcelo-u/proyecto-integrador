@@ -19,7 +19,7 @@ const getAll = async () => {
 
 const getAllOrderBy = async (object) => {
     try {
-        console.log (object.order_by);
+        // console.log (object.order_by);
         const [rows] = await conn.query(`SELECT * 
             FROM product 
             JOIN licence 
