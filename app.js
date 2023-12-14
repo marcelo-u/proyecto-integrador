@@ -12,7 +12,7 @@ const adminRoutes = require("./src/routes/adminRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 
 // Middle para parsear los datos recibidos a un formato que entienda el servidor
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Middle para poder pasa archivos estaticos al servidor
