@@ -9,7 +9,7 @@
             <h3  class="hero__title "> Nuevos Ingresos</h3>
             <p  class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
             </div>
-        <a  class="hero__link" href="/shop?filter=NEW">SHOP</a>
+        <a  class="hero__link" href="/shop?filter=new">SHOP</a>
         </article>
 
     </section>
@@ -25,7 +25,7 @@
         <p class="coletion__text">
             <%= lic.licence_description %>
         </p>
-        <a class="coletion__link" href="/shop?filter=LICENCE-<%= lic.licence_id %>">VER COLECCIÓN</a>
+        <a class="coletion__link" href="/shop?filter=licence-<%= lic.licence_id %>">VER COLECCIÓN</a>
         </article>
         <picture class="coletion__cover">
         <img src="/images/<%= lic.licence_image %>" alt="Imagen de la licencia <%= lic.licence_name %>" />

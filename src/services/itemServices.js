@@ -28,17 +28,18 @@ const getRelated = async (object) => {
 
 const getItemsFromCategory = async (filter) => {
     let items = [];
+    min_filter = filter.toLowerCase()
 
-    switch (filter) {
-    case "ALL":
+    switch (min_filter) {
+    case "all":
         items = await getAll();
         break;
-    case "NEW":
+    case "new":
         items = await getNews();
         break;
     default:
         let licence_id = filter;
-        licence_id = parseInt(licence_id.replace("LICENCE-", ""));
+        licence_id = parseInt(licence_id.replace("licence-", ""));
         items = await getAllAtributesFiltered(licence_id); 
     }
 
