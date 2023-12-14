@@ -39,6 +39,24 @@ const getLicences = async () => {
     }
 };   
 
+const getAllAtributesFiltered = async (licence_id) => {
+    try {
+        const [rows] = await conn.query(`SELECT 
+        product.*, licence_name, licence_description, licence_image, category_name, category_description
+        FROM product 
+        INNER JOIN licence 
+        ON product.licence_id = licence.licence_id
+        INNER JOIN category
+        on product.category_id = category.category_id
+        WHERE licence.licence_id = ?;`, licence_id);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};
+
 // Esta función chequea si existe el item antes de seguir con lo demas, es un getOne abreviado para ser reutilizado
 const CheckExistence = async (object) => {
     const [itemExistence] = await conn.query(`SELECT * 
@@ -108,6 +126,7 @@ module.exports = {
     getAll,
     getFiltered,
     getLicences,
+    getAllAtributesFiltered,
     getOne,
     addItem,
     editItem,

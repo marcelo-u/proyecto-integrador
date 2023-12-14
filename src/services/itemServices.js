@@ -1,7 +1,8 @@
-const {getAll, getFiltered} = require("../models/itemsModels")
+const {getAll, getFiltered, getAllAtributesFiltered} = require("../models/itemsModels")
 
 const getNews = async () => {
     const items = await getAll();
+
     let itemsNews = [];
     items.forEach( item => {
         let fecha_creacion = new Date(item.create_time);
@@ -25,7 +26,27 @@ const getRelated = async (object) => {
     return items
 };
 
+const getItemsFromCategory = async (filter) => {
+    let items = [];
+
+    switch (filter) {
+    case "ALL":
+        items = await getAll();
+        break;
+    case "NEW":
+        items = await getNews();
+        break;
+    default:
+        let licence_id = filter;
+        licence_id = parseInt(licence_id.replace("LICENCE-", ""));
+        items = await getAllAtributesFiltered(licence_id); 
+    }
+
+    return items;
+};
+
 module.exports = {
     getNews, 
-    getRelated
+    getRelated,
+    getItemsFromCategory
 }
