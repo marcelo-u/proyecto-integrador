@@ -17,9 +17,36 @@ const getAll = async () => {
     }
 };
 
+const getAllOrderBy = async (object) => {
+    try {
+        // console.log (object.order_by);
+        const [rows] = await conn.query(`SELECT * 
+            FROM product 
+            JOIN licence 
+            ON product.licence_id = licence.licence_id
+            JOIN category
+            on product.category_id = category.category_id
+            ORDER BY licence_name, product_name;`);
+
+//            ORDER BY ?;`, [object.order_by]);
+//            ORDER BY licence_name, product_name;`);
+//            ORDER BY ? ASC;`, Array.from( object));
+//            ORDER BY licence_name;`);
+//            ORDER BY licence_name, product_name;`);
+//            ORDER BY ?;`, object);
+        return rows
+    } catch (error) {
+        console.log(error);
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+};
+
+
 const getFiltered = async (object) => {
     try {
-        const [rows] = await conn.query(`SELECT * FROM product WHERE ?`, object);
+        const [rows] = await conn.query(`SELECT * FROM product WHERE ?;`, object);
         return rows
     } catch (error) {
         return errorDBhandler(error);
@@ -61,8 +88,10 @@ const getAllAtributesFiltered = async (licence_id) => {
 const CheckExistence = async (object) => {
     const [itemExistence] = await conn.query(`SELECT * 
         FROM product 
-        JOIN licence
-        ON product.licence_id = licence.licence_id 
+        JOIN licence 
+        ON product.licence_id = licence.licence_id
+        JOIN category
+        on product.category_id = category.category_id
         WHERE ?;`, object);
     if (itemExistence.length === 0) {
         throw new Error(`No se encontró el ítem con el ID ${object.product_id}`);
@@ -124,6 +153,7 @@ const deleteItem = async (object) => {
 
 module.exports = {
     getAll,
+    getAllOrderBy,
     getFiltered,
     getLicences,
     getAllAtributesFiltered,
