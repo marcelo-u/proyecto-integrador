@@ -57,19 +57,30 @@ const getFiltered = async (object) => {
 
 const getLicences = async () => {
     try {
-        const [rows] = await conn.query(`SELECT * FROM licence;;`);
+        const [rows] = await conn.query(`SELECT * FROM licence;`);
         return rows
     } catch (error) {
         return errorDBhandler(error);
     } finally {
         conn.releaseConnection();
     }
-};   
+};  
+
+const getCategories = async () => {
+    try {
+        const [rows] = await conn.query(`SELECT * FROM category;`);
+        return rows
+    } catch (error) {
+        return errorDBhandler(error);
+    } finally {
+        conn.releaseConnection();
+    }
+}; 
 
 const getAllAtributesFiltered = async (licence_id) => {
     try {
         const [rows] = await conn.query(`SELECT 
-        product.*, licence_name, licence_description, licence_image, category_name, category_description
+        product.*, licence_name, licence_description, licence_image, category_name, category_name
         FROM product 
         INNER JOIN licence 
         ON product.licence_id = licence.licence_id
@@ -127,11 +138,18 @@ const addItem = async (data) => {
 const editItem = async (object, data) => {
     try {
         await CheckExistence(object);
+        console.log({data, object});
+        // await conn.query(`UPDATE product SET product_name=?, product_description=?, price=?, stock=?, discount=?, 
+        //                     sku=?, dues=?, image_front=?, image_back=?, licence_id=?, category_id=? WHERE ?;`,
+        //                     [data.product_name, data.product_description, data.price, data.stock, data.discount, 
+        //                     data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id, object]);
+
         await conn.query(`UPDATE product SET product_name=?, product_description=?, price=?, stock=?, discount=?, 
-            sku=?, dues=?, image_front=?, image_back=?, licence_id=?, category_id=? WHERE ?;`,
-            [data.product_name, data.product_description, data.price, data.stock, data.discount, 
-            data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id, object]);
-        return `Se ha editado correctamente el Item`;
+                            sku=?, dues=?, licence_id=?, category_id=? WHERE ?;`,
+                            [data.product_name, data.product_description, data.price, data.stock, data.discount, 
+                            data.sku, data.dues, data.licence_id, data.category_id, object]);
+
+        return `El item fue modificado exitosamente.`;
     } catch (error) {
         return errorDBhandler(error);
     } finally {
@@ -156,6 +174,7 @@ module.exports = {
     getAllOrderBy,
     getFiltered,
     getLicences,
+    getCategories,
     getAllAtributesFiltered,
     getOne,
     addItem,

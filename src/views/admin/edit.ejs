@@ -1,68 +1,69 @@
 <%- include("../partials/header", { userADMIN: true, pageTittle: "Edit", css : "/css/styles-create-edit.css"  }); -%>
 
-<form action="" method="post" enctype="text/plain">
+<form action="/admin/edit/<%= item.product_id %>?_method=PUT" method="post" enctype="application/x-www-form-urlencoded">
 
     <section class="crear_container1">
       <h1>EDITAR ITEM</h1>
       <div class="divisor1">
           <div>
               <label class="letra categoria">Categoría:  </label>
-              <select name="categoria" id="selector_categoria">
-                  <option value="" disabled selected hidden>Seleccionar</option>
-                  <option value="n/a">N/A</option>
-                  <option value="op1">Opción1</option>
-                  <option value="op2">Opción2</option>
+              <select name="category_id" id="selector_categoria">
+                <% categories.forEach((category, i) => { %>
+                  <option <% if (item.category_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= category.category_name%></option>
+              <% }); %>
               </select>
   
           </div>
           <div>
               <label class="letra licencia">Licencia:  </label>
-              <select name="licencia" id="selector_licencia">
-                <option value="" disabled selected hidden>Seleccionar</option>
-                  <option value="n/a">N/A</option>
-                  <option value="op1">Opción1</option>
-                  <option value="op2">Opción2</option>
+              <select name="licence_id" id="selector_licencia">
+                <% licences.forEach((licence, i) => { %>
+                  <option <% if (item.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
+              <% }); %>
               </select>
   
           </div>
       </div>
       <div class="divisor2">
       <p class="letra nombre_producto">Nombre del producto:</p>
-      <input type="text" name="" id="nombre_producto" placeholder="Kakashi Hatake Shippuden Saga" maxlength="100">
+      <input type="text" name="product_name" id="nombre_producto" value="<%= item.product_name %>" placeholder="nombre del producto" maxlength="100">
       </div>
-      <textarea class="descripcion" name="comentario" id="" cols="60" rows="10" maxlength="600"  placeholder="Descripción del producto"></textarea>
+      <textarea class="descripcion" name="product_description" id="comentario" cols="60" rows="10" maxlength="600" placeholder="Descripción del producto"><%= item.product_description %></textarea>
       
 
       <div class="divisor2">
           <p class="letra sku">SKU:</p>
-          <input type="text" name="" id="ingreso_sku" placeholder="SSK111AB001" maxlength="11">
+          <input type="text" name="sku" id="ingreso_sku"  value="<%= item.sku %>"placeholder="código Stock-keeping unit" maxlength="11">
           <p class="letra precio">Precio:</p>
-          <input type="number" name="" id="ingreso_precio" placeholder="$ 0.0000,00" min="0" max="9.999,99">
+          <input type="number" name="price" id="ingreso_precio"  value="<%= item.price %>" placeholder="0,00" min="0" max="9.999,99">
           <p class="letra stock">Stock:</p>
-          <input type="number" name="" id="ingreso_stock" placeholder="0" min="0" max="1000">
+          <input type="number" name="stock" id="ingreso_stock"  value="<%= item.stock %>" placeholder="0" min="0" max="1000">
+          <p class="letra texto_derecha">unidades</p>
       </div>
 
       <div class="divisor3">
           <p class="letra descuento">Descuento:</p>
-          <input type="number" name="" id="ingreso_descuento" placeholder="0 %" min="0" max="100">
+          <input type="number" name="discount" id="ingreso_descuento"  value="<%= item.discount %>" placeholder="0 %" min="0" max="100">
+          <p class="letra texto_derecha">%</p>
           <label class="letra cuotas">Cuotas:  </label>
-              <select name="cuotas" id="selector_cuotas">
-                  <option value="" disabled selected hidden>3 Cuotas sin interés</option>
-                  <option value="n/a">N/A</option>
-                  <option value="3csi">3 Cuotas sin interés</option>
-                  <option value="6csi">6 Cuotas sin interés</option>
-                  <option value="12csi">12 Cuotas sin interés</option>
+              <select name="dues" id="selector_cuotas">
+                  <!-- <option value="" disabled selected hidden>3 Cuotas sin interés</option> -->
+                  <option <% if (item.dues === 0) { %>selected<% } %> value="0">Sin cuotas</option>
+                  <option <% if (item.dues === 3) { %>selected<% } %> value="3">3 cuotas sin interés</option>
+                  <option <% if (item.dues === 6) { %>selected<% } %> value="6">6 cuotas sin interés</option>
+                  <option <% if (item.dues === 9) { %>selected<% } %> value="9">9 cuotas sin interés</option>
+                  <option <% if (item.dues === 12) { %>selected<% } %> value="12">12 cuotas sin interés</option>                  
               </select>
       </div>
 
       <div class="letra imagenes">Imágenes: <input type="file" name="" id=""></div>
       <div class="admin-img-container">
         <figure>
-          <img class="admin-edit-img " src="../../images/harry-potter/harry-1.webp" alt="Frente" >
+          <img class="admin-edit-img " src="/images/<%= item.image_front %>" alt="Frente" >
           <figcaption>Frente</figcaption>
         </figure>
         <figure>
-          <img class="admin-edit-img" src="../../images/harry-potter/harry-box.webp" alt="Dorso">
+          <img class="admin-edit-img" src="/images/<%= item.image_back %>" alt="Dorso">
           <figcaption class="admin-edit-img-d">Dorso</figcaption>
         </figure>
       </div>

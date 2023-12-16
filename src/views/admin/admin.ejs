@@ -23,17 +23,27 @@
       <span class="admin-id">ID</span>
       <span class="admin-code">Código</span>
       <span class="admin-name">Nombre del Producto</span>
-      <span class="admin-cat">Licencia</span>
+      <span class="admin-cat">Categoría</span>
       
       <!-- ITEMS -->
       <% items.forEach(item => { %>
         <span class="admin-id admin-item"><%= item.product_id %></span>
         <span class="admin-code admin-item"><%= item.sku %></span>
         <span class="admin-name admin-item"><%= item.product_name %></span>
-        <span class="admin-cat admin-item"><%= item.licence_name %></span>
+        <span class="admin-cat admin-item"><%= item.category_name %></span>
         <a class="admin-image admin-item-edit" href="/admin/edit/<%= item.product_id %>"><img class="admin-image admin-item-edit" src="/images/icons/edit_pencil.svg" alt="Editar"></a>
-        <a class="admin-image admin-item-delete" href="/admin/delete/<%= item.product_id %>"><img  src="/images/icons/delete_trash.svg" alt="Borrar"></a>
-      <% }); %>
+        <!-- este link se convierte en un boton (y pertenece a un formulario), ya que va por POST, no por GET -->
+        <!-- <a class="admin-image admin-item-delete" href="/admin/delete/<%= item.product_id %>"><img  src="/images/icons/delete_trash.svg" alt="Borrar"></a> -->
+        <form action="/admin/delete/<%= item.product_id %>?_method=DELETE" method="POST">
+            <button class="admin-image admin-item-delete" type="submit">
+                <img src="/images/icons/delete_trash.svg" alt="Borrar">
+            </button>
+        </form>
+
+
+
+
+        <% }); %>
     </div>
 
 </main>
