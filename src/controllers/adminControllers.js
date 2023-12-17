@@ -1,4 +1,6 @@
-const {getAllOrderBy, getOne, getLicences, getCategories, addItem, editItem, deleteItem} = require("../models/itemsModels")
+const {getAllOrderBy, getOne, addItem, editItem, deleteItem} = require("../models/itemsModels")
+const CategoryService = require('../services/categoryService');
+const LicenceService = require('../services/licenceService'); 
 
 const adminControllers = {
     
@@ -9,12 +11,16 @@ const adminControllers = {
         res.render("admin/admin", {items});
     },
     
-    createGET: (req, res) => { res.render("admin/create")},
-    
+    createGET: async (req, res) => { 
+        const licences = await LicenceService.getAllItemsLicences();
+        const categories = await CategoryService.getAllItemsCategories();
+        res.render("admin/create", {licences, categories});
+    },
+  
     editGET: async (req, res) => { 
         const id = req.params.id
-        const licences = await getLicences();
-        const categories = await getCategories();
+        const licences = await LicenceService.getAllItemsLicences();
+        const categories = await CategoryService.getAllItemsCategories();
         const item = await getOne({product_id: id}); // Desestructuro, ya que sino hay que acceder a las propiedades por posicion [0] del array
         res.render("admin/edit", {item, licences, categories});
     },
@@ -22,7 +28,7 @@ const adminControllers = {
     createPOST: async (req, res) => { 
         const data = req.body
         const result = await addItem(data);
-        res.send(result);
+        res.send(result);  //esta linea solo muestra el msg de creación OK
     },
     
     editPUT: async (req, res) => { 

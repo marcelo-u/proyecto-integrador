@@ -55,28 +55,6 @@ const getFiltered = async (object) => {
     }
 };
 
-const getLicences = async () => {
-    try {
-        const [rows] = await conn.query(`SELECT * FROM licence;`);
-        return rows
-    } catch (error) {
-        return errorDBhandler(error);
-    } finally {
-        conn.releaseConnection();
-    }
-};  
-
-const getCategories = async () => {
-    try {
-        const [rows] = await conn.query(`SELECT * FROM category;`);
-        return rows
-    } catch (error) {
-        return errorDBhandler(error);
-    } finally {
-        conn.releaseConnection();
-    }
-}; 
-
 const getAllAtributesFiltered = async (licence_id) => {
     try {
         const [rows] = await conn.query(`SELECT 
@@ -173,8 +151,6 @@ module.exports = {
     getAll,
     getAllOrderBy,
     getFiltered,
-    getLicences,
-    getCategories,
     getAllAtributesFiltered,
     getOne,
     addItem,
