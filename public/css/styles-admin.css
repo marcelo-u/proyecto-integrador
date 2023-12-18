@@ -96,5 +96,8 @@
 }
 .admin-item-delete {
     grid-column: 16;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 

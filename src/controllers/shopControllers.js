@@ -1,12 +1,14 @@
-const { getAll, getOne } = require("../models/itemsModels");
-const { getRelated } = require("../services/itemServices");
+const { getAll, getOne } = require("../models/itemsModels")
+const { getRelated, getItemsFromCategory } = require("../services/itemServices")
 const { getCart, addItemCart, updateCart, deleteItemToCart} = require("../services/cartServices");
 
 const shopControllers = {
     
     shopGET: async (req, res) => { 
-        const items = await getAll();
-        res.render("shop/shop", {items});
+        // const items = await getAll();
+        // res.render("shop/shop", {items});
+        const items = await getItemsFromCategory(req.query.filter); 
+       res.render("shop/shop", {items});
     },
 
     itemGET: async (req, res) => { 

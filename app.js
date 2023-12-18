@@ -1,4 +1,5 @@
 const express = require("express");
+const methodOverride = require('method-override');
 const app = express();
 require('dotenv').config();
 
@@ -12,8 +13,11 @@ const adminRoutes = require("./src/routes/adminRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 
 // Middle para parsear los datos recibidos a un formato que entienda el servidor
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Override para habilitar métodos PUT y DELETE 
+app.use(methodOverride('_method'));
 
 // Middle para poder pasa archivos estaticos al servidor
 app.use(express.static("public"));

@@ -33,12 +33,15 @@ const addItemCart = async (id, quantity) => {
 };
 
 const updateCart = (id, quantity) => {
-    const index = shoppingCart.findIndex(item => item.product_id === Number(id));
-    shoppingCart[index].cart_quantity = Number(quantity);
+    const _product_id = parseInt(id)
+    const _quantity = parseInt(quantity)
+    const index = shoppingCart.findIndex(item => item.product_id == _product_id);
+    shoppingCart[index].cart_quantity = _quantity;
 };
 
 const deleteItemToCart = (id) => {
-    const index = shoppingCart.findIndex(item => item.product_id === Number(id));
+    const _product_id = parseInt(id)
+    const index = shoppingCart.findIndex(item => item.product_id == _product_id);
     shoppingCart.splice(index, 1);
 };
 
