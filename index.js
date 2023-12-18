@@ -39,3 +39,6 @@ app.use("/admin", adminRoutes);
 app.use(NotFound);
 
 app.listen(process.env.APP_PORT ,() => console.log(`Servidor de BlueLabel funcionando en http://localhost:${process.env.APP_PORT}`));
+
+// Export para vercel
+module.exports = app
