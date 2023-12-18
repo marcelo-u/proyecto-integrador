@@ -1,10 +1,11 @@
-const {getLicences} = require("../models/itemsModels");
+const {getAllItemsLicences} = require("../services/licenceService");
 const {getNews} = require("../services/itemServices");
 
 const mainControllers = {
     
     home: async (req, res) => { 
-        const licences = await getLicences();
+        const licences = await getAllItemsLicences();
+    //    const licences = await getLicences();
         const items = await getNews();
         res.render("home", {licences, items})
     },

@@ -1,4 +1,4 @@
-const {getAll, getFiltered, getAllAtributesFiltered} = require("../models/itemsModels")
+const {getAll, getFiltered, getAllAtributesFiltered, add, edit, deleteOne} = require("../models/itemsModels")
 
 const getNews = async () => {
     const items = await getAll();
@@ -46,8 +46,53 @@ const getItemsFromCategory = async (filter) => {
     return items;
 };
 
+const addItem = async (item, files) => {
+    const itemSchema = {
+      product_name: item.name,
+      product_description: item.description,
+      price: item.price,
+      stock: item.stock,
+      discount: item.discount,
+      sku: item.sku,
+      dues: item.dues,
+      //para que quede bien, primero se debe seleccionar en la vista la imagen de front y lugo la de back
+      //una opcion mas segura es poner en la vista 2 input tipo 'file'
+      image_front: '/'+files[0].filename,
+      image_back: '/'+files[1].filename,
+      licence_id: item.licence,
+      category_id: item.category
+    }
+
+    return await add([Object.values(itemSchema)]);
+}
+
+
+const editItem = async (item, files, id) => {
+    const itemSchema = {
+      product_name: item.name,
+      product_description: item.description,
+      price: item.price,
+      stock: item.stock,
+      discount: item.discount,
+      sku: item.sku,
+      dues: item.dues,
+      image_front: '/'+files[0].filename,
+      image_back: '/'+files[1].filename,
+      licence_id: item.licence,
+      category_id: item.category
+    }
+    return await edit(itemSchema, id);
+}
+
+const deleteItem = async (id) => {
+    return await deleteOne(id);
+}
+
 module.exports = {
     getNews, 
     getRelated,
-    getItemsFromCategory
+    getItemsFromCategory,
+    addItem,
+    editItem,
+    deleteItem
 }

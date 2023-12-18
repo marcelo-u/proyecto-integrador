@@ -1,13 +1,13 @@
 <%- include("../partials/header", { userADMIN: true, pageTittle: "Edit", css : "/css/styles-create-edit.css"  }); -%>
 
-<form action="/admin/edit/<%= item.product_id %>?_method=PUT" method="post" enctype="application/x-www-form-urlencoded">
+<form action="/admin/edit/<%= item.product_id %>?_method=PUT" method="post" enctype="multipart/form-data">
 
     <section class="crear_container1">
       <h1>EDITAR ITEM</h1>
       <div class="divisor1">
           <div>
               <label class="letra categoria">Categoría:  </label>
-              <select name="category_id" id="selector_categoria">
+              <select name="category" id="selector_categoria">
                 <% categories.forEach((category, i) => { %>
                   <option <% if (item.category_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= category.category_name%></option>
               <% }); %>
@@ -16,7 +16,7 @@
           </div>
           <div>
               <label class="letra licencia">Licencia:  </label>
-              <select name="licence_id" id="selector_licencia">
+              <select name="licence" id="selector_licencia">
                 <% licences.forEach((licence, i) => { %>
                   <option <% if (item.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
               <% }); %>
@@ -26,9 +26,9 @@
       </div>
       <div class="divisor2">
       <p class="letra nombre_producto">Nombre del producto:</p>
-      <input type="text" name="product_name" id="nombre_producto" value="<%= item.product_name %>" placeholder="nombre del producto" maxlength="100">
+      <input type="text" name="name" id="nombre_producto" value="<%= item.product_name %>" placeholder="nombre del producto" maxlength="100">
       </div>
-      <textarea class="descripcion" name="product_description" id="comentario" cols="60" rows="10" maxlength="600" placeholder="Descripción del producto"><%= item.product_description %></textarea>
+      <textarea class="descripcion" name="description" id="comentario" cols="60" rows="10" maxlength="600" placeholder="Descripción del producto"><%= item.product_description %></textarea>
       
 
       <div class="divisor2">
@@ -56,7 +56,7 @@
               </select>
       </div>
 
-      <div class="letra imagenes">Imágenes: <input type="file" name="" id=""></div>
+      <div class="letra imagenes">Imágenes: <input type="file" name="images" id="img" multiple></div>
       <div class="admin-img-container">
         <figure>
           <img class="admin-edit-img " src="/images/<%= item.image_front %>" alt="Frente" >

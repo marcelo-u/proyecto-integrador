@@ -1,4 +1,5 @@
-const {getAllOrderBy, getOne, addItem, editItem, deleteItem} = require("../models/itemsModels")
+const {getAllOrderBy, getOne} = require("../models/itemsModels")
+const {addItem, editItem, deleteItem} = require("../services/itemServices");
 const CategoryService = require('../services/categoryService');
 const LicenceService = require('../services/licenceService'); 
 
@@ -26,15 +27,19 @@ const adminControllers = {
     },
 
     createPOST: async (req, res) => { 
-        const data = req.body
-        const result = await addItem(data);
-        res.send(result);  //esta linea solo muestra el msg de creación OK
+        const data = req.body;
+        const files = req.files; 
+        await addItem(data, files);
+        //const result = await addItem(data, files);
+        //res.send(result);  //esta linea solo muestra el msg de creación OK
+        res.redirect('/admin'); 
     },
     
     editPUT: async (req, res) => { 
         const id = req.params.id;
         const data = req.body;
-        const result = await editItem({product_id: id}, data);
+        const files = req.files;         
+        const result = await editItem(data, files, {product_id: id});
         // res.send(result); //esta linea solo muestra el msg de edición OK
         res.redirect('/admin');
     },

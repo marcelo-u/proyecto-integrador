@@ -99,12 +99,15 @@ const getOne = async (object) => {
     }
 };
 
-const addItem = async (data) => {
+const add = async (data) => {
     try {   
-        await conn.query(`INSERT INTO product (product_name, product_description, price, stock, discount, 
-            sku, dues, image_front, image_back, licence_id, category_id) VALUES (?,?,?,?,?,?,?,?,?,?,?);`,
-            [data.product_name, data.product_description, data.price, data.stock, data.discount, 
-            data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id]);
+        // await conn.query(`INSERT INTO product (product_name, product_description, price, stock, discount, 
+        //     sku, dues, image_front, image_back, licence_id, category_id) VALUES (?,?,?,?,?,?,?,?,?,?,?);`,
+        //     [data.product_name, data.product_description, data.price, data.stock, data.discount, 
+        //     data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id]);
+
+        const [rows] = await conn.query(`INSERT INTO product (product_name, product_description, price, stock, discount, 
+            sku, dues, image_front, image_back, licence_id, category_id) VALUES ?;`, [data]);
         return `Se ha agregado correctamente el Item`
     } catch (error) {
         return errorDBhandler(error);
@@ -113,20 +116,14 @@ const addItem = async (data) => {
     }
 };
 
-const editItem = async (object, data) => {
+const edit = async (data, id) => {
     try {
-        await CheckExistence(object);
-        console.log({data, object});
+        await CheckExistence(id);
         // await conn.query(`UPDATE product SET product_name=?, product_description=?, price=?, stock=?, discount=?, 
         //                     sku=?, dues=?, image_front=?, image_back=?, licence_id=?, category_id=? WHERE ?;`,
         //                     [data.product_name, data.product_description, data.price, data.stock, data.discount, 
         //                     data.sku, data.dues, data.image_front, data.image_back, data.licence_id, data.category_id, object]);
-
-        await conn.query(`UPDATE product SET product_name=?, product_description=?, price=?, stock=?, discount=?, 
-                            sku=?, dues=?, licence_id=?, category_id=? WHERE ?;`,
-                            [data.product_name, data.product_description, data.price, data.stock, data.discount, 
-                            data.sku, data.dues, data.licence_id, data.category_id, object]);
-
+        const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [data, id]);
         return `El item fue modificado exitosamente.`;
     } catch (error) {
         return errorDBhandler(error);
@@ -135,7 +132,7 @@ const editItem = async (object, data) => {
     }
 };
 
-const deleteItem = async (object) => {
+const deleteOne = async (object) => {
     try {
         await CheckExistence(object);
         await conn.query("DELETE FROM product WHERE ?;", object);  
@@ -153,7 +150,7 @@ module.exports = {
     getFiltered,
     getAllAtributesFiltered,
     getOne,
-    addItem,
-    editItem,
-    deleteItem,
+    add,
+    edit,
+    deleteOne
 }
