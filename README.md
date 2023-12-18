@@ -11,7 +11,7 @@ Mirna Navarro Palmieri
 
 # _ESTRUCTURA .ENV_
 
-APP_PORT = 4000\
+APP_PORT = 4000
 
 DB_HOST = localhost\
 DB_USER = root\
