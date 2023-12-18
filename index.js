@@ -1,6 +1,7 @@
 const express = require("express");
-const methodOverride = require('method-override');
 const app = express();
+const path = require("path");
+const methodOverride = require('method-override');
 require('dotenv').config();
 
 // Importacion Error 404
@@ -20,11 +21,11 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 // Middle para poder pasa archivos estaticos al servidor
-app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, "public")));
 
 // Motor de plantillas EJS
 app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.set("views", path.resolve(__dirname,"./src/views"));
 
 // Ruta con nombre de pagina web y no con nombre de documento html (POR AHORA)
 // app.get("/home", (req,res) => res.sendFile(__dirname + "/public/index.html"));
